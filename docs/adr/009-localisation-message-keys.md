@@ -1,6 +1,6 @@
 # ADR-009: Message keys in core, translations in the adapter
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 
 ## Context

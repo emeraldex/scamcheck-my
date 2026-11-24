@@ -1,6 +1,6 @@
 # ADR-008: Stateless service with no input logging
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 
 ## Context

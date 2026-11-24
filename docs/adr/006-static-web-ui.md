@@ -1,6 +1,6 @@
 # ADR-006: Static HTML/JS page instead of Thymeleaf
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 - **Resolves:** SRS open question Q4, Project Plan §5 [DECIDE]
 

@@ -1,6 +1,6 @@
 # ADR-005: Category-capped weighted scoring
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 - **Resolves:** SRS open question Q1
 
