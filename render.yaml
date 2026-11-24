@@ -1,0 +1,12 @@
+# Render Blueprint (ADR-011). In Render: New > Blueprint, then pick this repository.
+# Render builds the Dockerfile and deploys main once its CI checks pass.
+services:
+  - type: web
+    name: scamcheck-my
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /actuator/health
+    autoDeployTrigger: checksPass
