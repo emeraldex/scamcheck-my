@@ -6,7 +6,10 @@ Paste a suspicious message, link, phone number or bank account number and get th
 
 **Live demo: https://scamcheck-my.onrender.com**. It runs on a free instance, so the first visit after a quiet spell can take about a minute while it wakes up.
 
-> Screenshots will be added in milestone M6.
+| Result (desktop, English) | Home (phone, BM) | Result (phone, BM, dark mode) |
+|---|---|---|
+| <img src="docs/images/result-desktop-en.png" alt="A HIGH RISK result in English, explaining the warning signs found, with buttons to call NSRC 997 and check Semak Mule" width="420"> | <img src="docs/images/home-mobile-ms.png" alt="The ScamCheck MY home page in Bahasa Melayu on a phone, with a text box and a Semak button" width="220"> | <img src="docs/images/result-mobile-ms-dark.png" alt="A RISIKO TINGGI result in Bahasa Melayu on a phone in dark mode" width="220"> |
+
 > Not affiliated with PDRM, NSRC or any bank. This tool gives advice only.
 
 ## How accurate is it?
