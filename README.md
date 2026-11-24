@@ -1,5 +1,7 @@
 # ScamCheck MY
 
+[![CI](https://github.com/emeraldex/scamcheck-my/actions/workflows/ci.yml/badge.svg)](https://github.com/emeraldex/scamcheck-my/actions/workflows/ci.yml)
+
 Paste a suspicious message, link, phone number or bank account number and get the warning signs found, a risk level (Low / Medium / High), and links to official places to check or report: PDRM Semak Mule and the NSRC hotline 997.
 
 > **Work in progress.** Screenshots and a live demo link will be added in milestone M6.
