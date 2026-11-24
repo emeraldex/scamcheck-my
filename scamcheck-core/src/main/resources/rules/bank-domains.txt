@@ -1,0 +1,29 @@
+# Malaysian banks: brand tokens and official domains (SRS US-04 AC1-AC2, ADR-007 Q2).
+#
+# !! VERIFY BEFORE RELEASE !!
+# Each official domain must be checked by hand against the bank's own website
+# (and Bank Negara Malaysia's list of licensed banks). Nothing here is scraped.
+# A missing official domain makes genuine links show a false "lookalike" warning.
+# Last verified: NOT YET VERIFIED
+#
+# Format: Display name | brand tokens | official registrable domains
+# - Brand tokens: a link is suspicious if a part of its host name (split on "." and "-")
+#   starts or ends with a token, but its domain isn't one of the official ones.
+# - Official domains: registrable domains only (e.g. maybank2u.com.my, not www.maybank2u.com.my).
+
+Maybank             | maybank, maybank2u       | maybank2u.com.my, maybank.com
+CIMB Bank           | cimb, cimbclicks         | cimb.com.my, cimbclicks.com.my, cimb.com
+Public Bank         | pbebank, publicbank      | pbebank.com
+RHB Bank            | rhb                      | rhbgroup.com
+Hong Leong Bank     | hlb, hongleong           | hlb.com.my, hongleongconnect.my
+AmBank              | ambank                   | ambank.com.my, ambankgroup.com
+Bank Islam          | bankislam                | bankislam.com
+BSN                 | mybsn, bsn               | mybsn.com.my
+Bank Rakyat         | bankrakyat               | bankrakyat.com.my
+Affin Bank          | affin, affinbank         | affinbank.com.my
+Alliance Bank       | alliancebank             | alliancebank.com.my
+Agrobank            | agrobank                 | agrobank.com.my
+Bank Muamalat       | muamalat                 | muamalat.com.my
+UOB Malaysia        | uob                      | uob.com.my
+OCBC Malaysia       | ocbc                     | ocbc.com.my
+HSBC Malaysia       | hsbc                     | hsbc.com.my

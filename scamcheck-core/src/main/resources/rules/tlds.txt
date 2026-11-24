@@ -1,0 +1,44 @@
+# Common top-level domains (ADR-007). Used only to recognise links written
+# without http(s):// ("maybank2u.com.my"), so ordinary chat such as "ok.jom"
+# isn't mistaken for a link. Endings in unusual-tlds.txt are recognised too.
+# One per line, lower case, without the dot. Last reviewed: 2026-11-24.
+
+# Generic
+com
+net
+org
+info
+biz
+app
+dev
+io
+me
+co
+cc
+tv
+pro
+asia
+
+# Country codes common in Malaysian messages
+my
+sg
+id
+th
+ph
+vn
+cn
+hk
+tw
+in
+au
+uk
+us
+
+# Used by URL shorteners and messaging links
+ly
+gl
+gd
+gy
+at
+to
+im

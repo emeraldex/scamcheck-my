@@ -12,7 +12,7 @@ import my.scamcheck.core.model.Finding;
 import my.scamcheck.core.model.RiskAssessment;
 import my.scamcheck.core.model.RiskLevel;
 import my.scamcheck.core.model.Weight;
-import my.scamcheck.core.rule.KeywordRules;
+import my.scamcheck.core.rule.DefaultRules;
 import my.scamcheck.core.rule.Rule;
 import my.scamcheck.core.score.RiskScorer;
 import my.scamcheck.core.score.ScoringPolicy;
@@ -27,7 +27,7 @@ class ScamAnalyzerTest {
     @Nested
     class WithDefaultRules {
 
-        private final ScamAnalyzer analyzer = new ScamAnalyzer(new InputExtractor(), KeywordRules.defaults(), SCORER);
+        private final ScamAnalyzer analyzer = new ScamAnalyzer(new InputExtractor(), DefaultRules.all(), SCORER);
 
         private RiskAssessment analyze(String text) {
             return analyzer.analyze(new AnalysisInput(text));
@@ -74,6 +74,33 @@ class ScamAnalyzerTest {
 
             assertThat(result.score()).isEqualTo(55);
             assertThat(result.level()).isEqualTo(RiskLevel.MEDIUM);
+        }
+
+        @Test
+        void investmentScamWithLookalikeBankLinkIsHigh() { // ARCHITECTURE §4.3 example 3, SRS US-02 AC4
+            RiskAssessment result = analyze("Pelaburan dijamin untung 30%, daftar segera di maybank2u-secure.xyz");
+
+            // investment STRONG 35 + urgency MODERATE 20 + link STRONG 35 (lookalike; .xyz is also LINK)
+            assertThat(result.score()).isEqualTo(90);
+            assertThat(result.level()).isEqualTo(RiskLevel.HIGH);
+            assertThat(result.findings()).extracting(Finding::ruleId)
+                    .contains("link.lookalike-bank", "link.unusual-tld");
+        }
+
+        @Test
+        void lookalikeBankLinkAloneIsMedium() { // ARCHITECTURE §4.3 example 4
+            RiskAssessment result = analyze("https://maybank2u-secure.xyz/login");
+
+            assertThat(result.score()).isEqualTo(35);
+            assertThat(result.level()).isEqualTo(RiskLevel.MEDIUM);
+        }
+
+        @Test
+        void genuineBankLinkIsLow() {
+            RiskAssessment result = analyze("Log in at https://www.maybank2u.com.my to see your statement.");
+
+            assertThat(result.level()).isEqualTo(RiskLevel.LOW);
+            assertThat(result.findings()).isEmpty();
         }
 
         @Test

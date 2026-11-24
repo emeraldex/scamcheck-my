@@ -1,0 +1,18 @@
+# URL shortener domains (SRS US-04 AC3, ADR-007). A short link hides where it really goes.
+# Matched against the link's registrable domain. Last reviewed: 2026-11-24.
+# One per line, lower case.
+
+bit.ly
+tinyurl.com
+t.ly
+s.id
+cutt.ly
+shorturl.at
+rb.gy
+is.gd
+t.co
+goo.gl
+ow.ly
+tiny.cc
+rebrand.ly
+bl.ink
