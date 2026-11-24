@@ -162,6 +162,9 @@ classDiagram
         ACCOUNT_THREAT
         IMPERSONATION
         CREDENTIAL_REQUEST
+        PRIZE
+        JOB_OFFER
+        MONEY_REQUEST
         LINK
         PHONE
         ACCOUNT
@@ -224,7 +227,10 @@ Why it looks like this ([ADR-002](adr/002-pluggable-rule-engine.md)):
 | `keyword.urgency` | URGENCY | US-03 | WEAK to MODERATE |
 | `keyword.account-threat` | ACCOUNT_THREAT | US-03 | MODERATE to STRONG |
 | `keyword.impersonation` | IMPERSONATION | US-03 | MODERATE |
-| `keyword.credential-request` | CREDENTIAL_REQUEST | US-03 | STRONG |
+| `keyword.credential-request` | CREDENTIAL_REQUEST | US-03 | MODERATE to STRONG |
+| `keyword.prize` (added M5) | PRIZE | US-03 | MODERATE to STRONG |
+| `keyword.job-offer` (added M5) | JOB_OFFER | US-03 | MODERATE to STRONG |
+| `keyword.money-request` (added M5) | MONEY_REQUEST | US-03 | WEAK to STRONG |
 | `link.lookalike-bank` | LINK | US-04 | STRONG |
 | `link.shortener` | LINK | US-04 | MODERATE |
 | `link.unusual-tld` | LINK | US-04 | WEAK |
@@ -234,7 +240,7 @@ Why it looks like this ([ADR-002](adr/002-pluggable-rule-engine.md)):
 | `phone.international` | PHONE | US-05 | WEAK |
 | `account.detected` | ACCOUNT | US-06 | INFO |
 
-The five keyword rules share one implementation (`KeywordRule`), configured from a different data file each ([ADR-007](adr/007-rule-data-and-sample-sets.md)).
+The eight keyword rules share one implementation (`KeywordRule`), configured from a different data file each ([ADR-007](adr/007-rule-data-and-sample-sets.md)).
 
 ### 4.3 Scoring
 
