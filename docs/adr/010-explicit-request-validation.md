@@ -1,6 +1,6 @@
 # ADR-010: Explicit request validation instead of Bean Validation
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 - **Amends:** [ADR-003](003-spring-boot-thin-adapter.md) (which listed Jakarta Bean Validation for request checks)
 

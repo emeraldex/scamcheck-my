@@ -1,6 +1,6 @@
 # ADR-011: One Docker image, deployed to Render's free tier
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 - **Resolves:** NFR-08 (portability), plan risk R8 (free host limits or changes), the M5 live URL
 
