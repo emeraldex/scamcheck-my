@@ -101,6 +101,20 @@ class AnalyzeControllerTest {
         }
 
         @Test
+        void mixedInputAppliesLinkPhoneAndAccountRules() { // US-01 AC2, US-06 AC2
+            MvcTestResult result = post("""
+                    {"text": "Klik bit.ly/abc, telefon +855 12 345 678, bank in ke 5123 4567 8901", "language": "en"}
+                    """);
+
+            assertThat(result).hasStatusOk();
+            assertThat(result).bodyJson().extractingPath("$.findings[*].ruleId").asArray()
+                    .contains("link.shortener", "phone.international", "account.detected");
+            assertThat(result).bodyJson().extractingPath("$.findings[?(@.ruleId == 'account.detected')].explanation")
+                    .asArray().singleElement().asString()
+                    .contains("can't tell").contains("Semak Mule");
+        }
+
+        @Test
         void acceptsTextAtTheMaximumLength() { // US-01 AC4 boundary
             assertThat(post("{\"text\": \"" + "a".repeat(5_000) + "\"}")).hasStatusOk();
         }
