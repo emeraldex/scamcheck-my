@@ -1,0 +1,265 @@
+openapi: 3.1.0
+info:
+  title: ScamCheck MY API
+  version: 1.0.0-draft
+  summary: Checks pasted text for common scam warning signs.
+  description: |
+    Analyses a suspicious message, link, phone number or bank account number and returns
+    the warning signs found, an overall risk level and links to official help.
+
+    * **Stateless:** input is never stored or logged (SRS US-10, ADR-008).
+    * **Advice only:** a `LOW` result means "no common warning signs found", never "safe".
+    * Not affiliated with PDRM, NSRC or any bank.
+  license:
+    name: MIT
+    identifier: MIT
+
+servers:
+  - url: http://localhost:8080
+    description: Local development
+
+tags:
+  - name: analysis
+    description: Scam warning-sign analysis
+
+paths:
+  /api/v1/analyze:
+    post:
+      tags: [analysis]
+      operationId: analyze
+      summary: Analyse text for scam warning signs
+      description: |
+        Runs every rule against the input. The input may mix free text, URLs, phone numbers and
+        account numbers. The same input always gives the same result (SRS US-02 AC5).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnalyzeRequest'
+            examples:
+              investmentScamMs:
+                summary: Malay investment scam with lookalike link
+                value:
+                  text: "Pelaburan dijamin untung 30% sebulan! Daftar segera di maybank2u-secure.xyz"
+                  language: ms
+              plainChat:
+                summary: Ordinary message
+                value:
+                  text: "Jom makan tengah hari esok?"
+                  language: en
+      responses:
+        '200':
+          description: Analysis completed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyzeResponse'
+              examples:
+                high:
+                  summary: High risk result (English explanations)
+                  value:
+                    riskLevel: HIGH
+                    score: 90
+                    summary: "Several strong scam warning signs were found."
+                    findings:
+                      - ruleId: keyword.investment
+                        category: INVESTMENT
+                        weight: STRONG
+                        matchedText: "dijamin untung"
+                        title: "Promise of guaranteed returns"
+                        explanation: "Real investments never guarantee profit. Promises like this are the most common sign of an investment scam."
+                      - ruleId: link.lookalike-bank
+                        category: LINK
+                        weight: STRONG
+                        matchedText: "maybank2u-secure.xyz"
+                        title: "Link pretends to be a bank"
+                        explanation: "This link uses a bank's name but is not the bank's official website. Do not enter any login details."
+                      - ruleId: keyword.urgency
+                        category: URGENCY
+                        weight: MODERATE
+                        matchedText: "segera"
+                        title: "Pressure to act quickly"
+                        explanation: "Scammers rush you so you don't stop to check. Take your time."
+                      - ruleId: link.unusual-tld
+                        category: LINK
+                        weight: WEAK
+                        matchedText: "maybank2u-secure.xyz"
+                        title: "Unusual website ending"
+                        explanation: "Malaysian banks use .com.my or .com addresses. Endings like .xyz are often used for short-lived scam sites."
+                    officialHelp:
+                      tip: "Do not transfer money or click the link. If you have already paid, call 997 immediately."
+                      links:
+                        - id: semak-mule
+                          label: "Check an account or phone number on Semak Mule"
+                          url: "https://semakmule.rmp.gov.my"
+                        - id: nsrc-997
+                          label: "Call the NSRC scam hotline: 997"
+                          url: "tel:997"
+                    disclaimer: "Not affiliated with PDRM, NSRC or any bank. This tool gives advice only."
+                low:
+                  summary: Low risk result
+                  value:
+                    riskLevel: LOW
+                    score: 0
+                    summary: "No common warning signs found. This does not mean it is safe."
+                    findings: []
+                    officialHelp:
+                      tip: "If you are still unsure, don't share personal details and check with the sender through an official channel."
+                      links:
+                        - id: semak-mule
+                          label: "Check an account or phone number on Semak Mule"
+                          url: "https://semakmule.rmp.gov.my"
+                        - id: nsrc-997
+                          label: "Call the NSRC scam hotline: 997"
+                          url: "tel:997"
+                    disclaimer: "Not affiliated with PDRM, NSRC or any bank. This tool gives advice only."
+        '400':
+          description: |
+            Invalid request: blank text, text over 5,000 characters, unknown language, or malformed JSON.
+            The error body never echoes the submitted text (ADR-008).
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+              example:
+                type: "/problems/validation-error"
+                title: "Invalid request"
+                status: 400
+                detail: "The request has 1 invalid field."
+                instance: "/api/v1/analyze"
+                errors:
+                  - field: text
+                    message: "Text must be 5,000 characters or fewer."
+        '415':
+          description: Content type is not `application/json`.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+
+components:
+  schemas:
+    AnalyzeRequest:
+      type: object
+      required: [text]
+      additionalProperties: false
+      properties:
+        text:
+          type: string
+          minLength: 1
+          maxLength: 5000
+          description: The pasted input. Must contain at least one non-whitespace character.
+        language:
+          $ref: '#/components/schemas/Language'
+
+    Language:
+      type: string
+      enum: [en, ms]
+      default: ms
+      description: Language for explanation text. Detection always covers both languages.
+
+    AnalyzeResponse:
+      type: object
+      required: [riskLevel, score, summary, findings, officialHelp, disclaimer]
+      properties:
+        riskLevel:
+          $ref: '#/components/schemas/RiskLevel'
+        score:
+          type: integer
+          minimum: 0
+          description: Sum of the strongest finding per category (ADR-005). For transparency; clients should rely on riskLevel.
+        summary:
+          type: string
+          description: One-sentence summary in the requested language.
+        findings:
+          type: array
+          description: All findings, strongest first. Empty when no rule fired.
+          items:
+            $ref: '#/components/schemas/Finding'
+        officialHelp:
+          $ref: '#/components/schemas/OfficialHelp'
+        disclaimer:
+          type: string
+
+    RiskLevel:
+      type: string
+      enum: [LOW, MEDIUM, HIGH]
+      description: LOW means "no common warning signs found", never "safe".
+
+    Finding:
+      type: object
+      required: [ruleId, category, weight, matchedText, title, explanation]
+      properties:
+        ruleId:
+          type: string
+          description: Stable rule identifier.
+          examples: [keyword.urgency, link.lookalike-bank, phone.invalid-my]
+        category:
+          type: string
+          enum: [INVESTMENT, URGENCY, ACCOUNT_THREAT, IMPERSONATION, CREDENTIAL_REQUEST, LINK, PHONE, ACCOUNT]
+        weight:
+          type: string
+          enum: [INFO, WEAK, MODERATE, STRONG]
+        matchedText:
+          type: string
+          description: The part of the input that triggered the rule.
+        title:
+          type: string
+          description: Short plain-language name of the warning sign.
+        explanation:
+          type: string
+          description: One or two plain-language sentences explaining why this is a warning sign.
+
+    OfficialHelp:
+      type: object
+      required: [tip, links]
+      properties:
+        tip:
+          type: string
+          description: A "what to do now" tip matching the risk level.
+        links:
+          type: array
+          minItems: 2
+          items:
+            $ref: '#/components/schemas/HelpLink'
+
+    HelpLink:
+      type: object
+      required: [id, label, url]
+      properties:
+        id:
+          type: string
+          examples: [semak-mule, nsrc-997]
+        label:
+          type: string
+        url:
+          type: string
+          format: uri
+
+    Problem:
+      type: object
+      description: RFC 9457 problem details.
+      required: [type, title, status]
+      properties:
+        type:
+          type: string
+          format: uri-reference
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
+        errors:
+          type: array
+          items:
+            type: object
+            required: [field, message]
+            properties:
+              field:
+                type: string
+              message:
+                type: string

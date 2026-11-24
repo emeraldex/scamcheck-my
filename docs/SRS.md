@@ -229,13 +229,13 @@ Categories: investment/guaranteed returns, urgency, account threats, authority i
 
 ---
 
-## 6. Open questions (resolve in Phase 3)
+## 6. Open questions (resolved in Phase 3)
 
-- **Q1** Scoring: weighted sum with thresholds, or category-based escalation? (ADR)
-- **Q2** Which Malaysian bank domains go on the genuine list for lookalike checks, and how do we keep it current?
-- **Q3** Bank account formats: one generic digit-length rule, or per-bank patterns?
-- **Q4** Web UI: Thymeleaf or static HTML/JS (Project Plan §5 [DECIDE]).
-- **Q5** Sample data sets: where do the scam and legitimate samples come from, and how are they kept free of real personal data?
+- **Q1** Scoring: weighted sum with thresholds, or category-based escalation? → [ADR-005](adr/005-scoring-model.md)
+- **Q2** Which Malaysian bank domains go on the genuine list for lookalike checks, and how do we keep it current? → [ADR-007](adr/007-rule-data-and-sample-sets.md)
+- **Q3** Bank account formats: one generic digit-length rule, or per-bank patterns? → [ADR-007](adr/007-rule-data-and-sample-sets.md)
+- **Q4** Web UI: Thymeleaf or static HTML/JS (Project Plan §5 [DECIDE]). → [ADR-006](adr/006-static-web-ui.md)
+- **Q5** Sample data sets: where do the scam and legitimate samples come from, and how are they kept free of real personal data? → [ADR-007](adr/007-rule-data-and-sample-sets.md)
 
 ---
 
