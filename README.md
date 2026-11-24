@@ -34,6 +34,7 @@ So a **LOW result never means "safe"**, and the page says so. The [test plan](do
 | [Test plan](docs/TEST_PLAN.md) | Test levels, sample sets and accuracy results, coverage, manual checklist |
 | [Deployment](docs/DEPLOYMENT.md) | Docker image, Render setup, cold starts, health check |
 | [Maintainer guide](docs/MAINTAINING.md) | Handling missed-scam reports, adding phrases and rules, releasing |
+| [Changelog](CHANGELOG.md) | What changed in each release |
 | [Contributing](CONTRIBUTING.md) | Branching, commit messages, PR checklist |
 
 ## Modules
