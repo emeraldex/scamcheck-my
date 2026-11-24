@@ -1,0 +1,4 @@
+# kind: scam | type: family-impersonation | lang: ms
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Mak, ni nombor baru saya. Telefon rosak. Boleh tolong bank in RM2,000 ke akaun kawan 5123 4567 8901? Segera ya.

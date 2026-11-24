@@ -1,0 +1,4 @@
+# kind: legit | type: chat | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Transfer the RM50 for the futsal court to my account 5123 4567 8901, thanks bro.

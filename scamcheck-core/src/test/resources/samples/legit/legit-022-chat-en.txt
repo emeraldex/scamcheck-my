@@ -1,0 +1,4 @@
+# kind: legit | type: chat | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Hurry, the train leaves in 10 minutes! Where are you?

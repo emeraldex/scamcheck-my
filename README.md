@@ -17,6 +17,7 @@ Paste a suspicious message, link, phone number or bank account number and get th
 | [ADRs](docs/adr/) | Why each design decision was made |
 | [API spec](docs/api/openapi.yaml) | OpenAPI 3.1 for `POST /api/v1/analyze` |
 | [Wireframe](docs/WIREFRAME.md) | Page layout |
+| [Test plan](docs/TEST_PLAN.md) | Test levels, sample sets and accuracy results, coverage, manual checklist |
 | [Contributing](CONTRIBUTING.md) | Branching, commit messages, PR checklist |
 
 ## Modules

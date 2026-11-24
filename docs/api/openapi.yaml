@@ -197,7 +197,7 @@ components:
           examples: [keyword.urgency, link.lookalike-bank, phone.invalid-my]
         category:
           type: string
-          enum: [INVESTMENT, URGENCY, ACCOUNT_THREAT, IMPERSONATION, CREDENTIAL_REQUEST, LINK, PHONE, ACCOUNT]
+          enum: [INVESTMENT, URGENCY, ACCOUNT_THREAT, IMPERSONATION, CREDENTIAL_REQUEST, PRIZE, JOB_OFFER, MONEY_REQUEST, LINK, PHONE, ACCOUNT]
         weight:
           type: string
           enum: [INFO, WEAK, MODERATE, STRONG]

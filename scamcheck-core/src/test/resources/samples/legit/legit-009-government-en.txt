@@ -1,0 +1,4 @@
+# kind: legit | type: government | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Reminder: e-Filing LHDN for income tax closes on 30 April. Submit at mytax.hasil.gov.my.

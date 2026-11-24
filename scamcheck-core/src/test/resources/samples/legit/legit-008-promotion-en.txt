@@ -1,0 +1,4 @@
+# kind: legit | type: promotion | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Shopee 11.11 sale is live! Up to 90% off, today only. Shop now at shopee.com.my

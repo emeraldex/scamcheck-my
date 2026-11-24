@@ -1,0 +1,4 @@
+# kind: legit | type: family | lang: ms
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Abang, nanti balik singgah kedai beli roti dan susu ya.

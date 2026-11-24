@@ -1,0 +1,4 @@
+# kind: scam | type: bank-phishing | lang: en
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+CIMB Alert: your account has been suspended due to unusual activity. Verify your account at http://cimb-secure-login.top within 24 hours.

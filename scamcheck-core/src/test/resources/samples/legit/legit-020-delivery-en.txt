@@ -1,0 +1,4 @@
+# kind: legit | type: delivery | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Your package from Lazada has been delivered. Rate your experience in the app.

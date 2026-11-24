@@ -1,0 +1,4 @@
+# kind: legit | type: delivery | lang: ms
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Parcel anda sedang dihantar oleh Pos Laju. Nombor penjejakan EP123456789MY.

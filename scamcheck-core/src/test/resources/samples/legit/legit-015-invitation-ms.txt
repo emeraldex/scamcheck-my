@@ -1,0 +1,4 @@
+# kind: legit | type: invitation | lang: ms
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Kenduri kahwin anak saya pada 12 Disember di Dewan Seri Melati. Jemput datang!

@@ -29,14 +29,17 @@ class KeywordRulesTest {
     }
 
     @Test
-    void loadsFiveRulesWithUniqueIds() {
+    void loadsAllKeywordRulesWithUniqueIds() {
         assertThat(rules).extracting(Rule::id)
                 .containsExactly(
                         "keyword.investment",
                         "keyword.urgency",
                         "keyword.account-threat",
                         "keyword.impersonation",
-                        "keyword.credential-request");
+                        "keyword.credential-request",
+                        "keyword.prize",
+                        "keyword.job-offer",
+                        "keyword.money-request");
     }
 
     @Test

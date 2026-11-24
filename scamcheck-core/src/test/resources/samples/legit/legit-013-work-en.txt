@@ -1,0 +1,4 @@
+# kind: legit | type: work | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Can you send me the report by Friday? Thanks!

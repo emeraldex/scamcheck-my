@@ -1,0 +1,4 @@
+# kind: scam | type: bank-phishing | lang: ms
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+RHB: Transaksi mencurigakan RM2,500 dikesan. Jika bukan anda, sila log masuk di http://192.0.2.44/rhb dengan segera.

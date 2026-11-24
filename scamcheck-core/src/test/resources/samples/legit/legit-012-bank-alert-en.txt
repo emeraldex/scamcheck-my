@@ -1,0 +1,4 @@
+# kind: legit | type: bank-alert | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Your Maybank card ending 1234 was used for RM45.90 at Tesco. If this wasn't you, call the number on the back of your card.

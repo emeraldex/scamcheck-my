@@ -1,0 +1,20 @@
+# Prize, lucky-draw and "you have won" wording (ADR-007).
+# Added in M5 after the sample sets showed prize scams were missed.
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+#
+# Format: WEIGHT | language | phrase
+
+STRONG   | ms | anda memenangi
+STRONG   | ms | tuntut hadiah
+STRONG   | ms | tuntut hadiah anda
+STRONG   | en | you have won
+STRONG   | en | you won
+STRONG   | en | claim your prize
+STRONG   | en | claim your reward
+
+MODERATE | ms | anda menang
+MODERATE | ms | cabutan bertuah
+MODERATE | ms | pemenang
+MODERATE | en | lucky draw
+MODERATE | en | winner
+MODERATE | en | prize
