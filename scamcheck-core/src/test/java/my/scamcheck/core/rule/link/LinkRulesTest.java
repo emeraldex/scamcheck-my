@@ -11,7 +11,7 @@ import my.scamcheck.core.model.ExtractedInput;
 import my.scamcheck.core.model.Finding;
 import my.scamcheck.core.model.Weight;
 import my.scamcheck.core.rule.Rule;
-import my.scamcheck.core.rule.data.BankDomains;
+import my.scamcheck.core.rule.data.BrandDomains;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -26,11 +26,57 @@ class LinkRulesTest {
     }
 
     @Nested
+    class LookalikeBrand {
+
+        private final Rule rule = LookalikeDomainRule.brands(List.of(
+                new BrandDomains("Pos Laju", Set.of("poslaju"), Set.of("poslaju.com.my", "pos.com.my")),
+                new BrandDomains("LHDN", Set.of("lhdn", "hasil"), Set.of("hasil.gov.my")),
+                new BrandDomains("Malaysian government", Set.of("gov"), Set.of("gov.my", "gov.uk"))));
+
+        @Test
+        void courierNameOnAnotherDomainIsFlagged() {
+            assertThat(evaluate(rule, "Kemaskini alamat di https://poslaju-semak.top/my"))
+                    .singleElement()
+                    .satisfies(f -> {
+                        assertThat(f.ruleId()).isEqualTo("link.lookalike-brand");
+                        assertThat(f.weight()).isEqualTo(Weight.STRONG);
+                        assertThat(f.matchedText()).isEqualTo("poslaju-semak.top");
+                        assertThat(f.messageArgs()).containsExactly("Pos Laju");
+                    });
+        }
+
+        @Test
+        void fakeGovernmentSiteIsFlagged() {
+            assertThat(evaluate(rule, "https://str-semakan.gov-my.site")).extracting(Finding::messageArgs)
+                    .containsExactly(List.of("Malaysian government"));
+        }
+
+        @Test
+        void specificAgencyIsNamedBeforeTheGenericGovernmentEntry() {
+            assertThat(evaluate(rule, "https://lhdn-bayaran.gov-pay.cc")).extracting(Finding::messageArgs)
+                    .containsExactly(List.of("LHDN"));
+        }
+
+        @Test
+        void officialDomainsAndTheirSubdomainsAreNotFlagged() {
+            assertThat(evaluate(rule, "https://www.poslaju.com.my")).isEmpty();
+            assertThat(evaluate(rule, "https://mytax.hasil.gov.my/login")).isEmpty();
+            assertThat(evaluate(rule, "https://www.jpj.gov.my")).isEmpty();
+            assertThat(evaluate(rule, "https://www.gov.uk/visas")).isEmpty();
+        }
+
+        @Test
+        void tokenMustStartOrEndAHostPart() {
+            assertThat(evaluate(rule, "https://www.ungoverned-example.com")).isEmpty();
+        }
+    }
+
+    @Nested
     class LookalikeBank {
 
-        private final Rule rule = new LookalikeBankRule(List.of(
-                new BankDomains("Maybank", Set.of("maybank", "maybank2u"), Set.of("maybank2u.com.my", "maybank.com")),
-                new BankDomains("CIMB Bank", Set.of("cimb"), Set.of("cimb.com.my"))));
+        private final Rule rule = LookalikeDomainRule.banks(List.of(
+                new BrandDomains("Maybank", Set.of("maybank", "maybank2u"), Set.of("maybank2u.com.my", "maybank.com")),
+                new BrandDomains("CIMB Bank", Set.of("cimb"), Set.of("cimb.com.my"))));
 
         @Test
         void us04_ac1_brandNameOnAnotherDomain() {
@@ -166,9 +212,10 @@ class LinkRulesTest {
     }
 
     @Test
-    void defaultsLoadFiveLinkRules() {
+    void defaultsLoadSixLinkRules() {
         assertThat(LinkRules.defaults()).extracting(Rule::id).containsExactly(
-                "link.lookalike-bank", "link.shortener", "link.unusual-tld", "link.raw-ip", "link.not-https");
+                "link.lookalike-bank", "link.lookalike-brand", "link.shortener", "link.unusual-tld",
+                "link.raw-ip", "link.not-https");
     }
 
     @Test

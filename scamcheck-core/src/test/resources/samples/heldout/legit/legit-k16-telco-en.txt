@@ -1,0 +1,5 @@
+# kind: legit
+# type: telco
+# lang: en
+
+Maxis: Your bill of RM98.00 for Nov is ready. Pay before 10 Dec via the Maxis app or https://www.maxis.com.my to avoid late charges. Thank you.

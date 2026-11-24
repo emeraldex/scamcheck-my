@@ -1,0 +1,5 @@
+# kind: legit
+# type: work
+# lang: en
+
+Hi all, reminder that November claims must be submitted in the HR portal by 28/11. Late claims will be processed next month.

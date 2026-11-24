@@ -1,0 +1,5 @@
+# kind: legit
+# type: bank-tac
+# lang: ms
+
+RM0 Maybank: TAC anda ialah 482913 utk pemindahan RM120.00 ke akaun ****4471. Sah dlm 3 minit. JANGAN kongsi TAC ini dgn sesiapa, termasuk kakitangan bank.

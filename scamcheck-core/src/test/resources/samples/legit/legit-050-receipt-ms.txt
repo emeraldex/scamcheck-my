@@ -1,0 +1,5 @@
+# kind: legit
+# type: receipt
+# lang: ms
+
+Tiket anda telah disahkan: KL Sentral ke Ipoh, 28/11/2026 08:00, Koc C Kerusi 12. No. tempahan KTM5502194. Sila tunjukkan e-tiket semasa menaiki tren.

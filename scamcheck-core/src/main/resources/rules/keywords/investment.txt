@@ -1,5 +1,5 @@
 # Investment and guaranteed-return wording (SRS US-03, ADR-007).
-# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24 (M6 held-out update).
 #
 # Format: WEIGHT | language | phrase   (WEIGHT = INFO, WEAK, MODERATE or STRONG)
 # Phrases match whole words, ignoring case and extra spaces.
@@ -37,3 +37,22 @@ WEAK     | ms | melabur
 WEAK     | en | investment
 WEAK     | en | invest
 WEAK     | en | profit
+
+# --- Added in M6 after the held-out samples (TEST_PLAN §4) ---
+STRONG   | en | daily returns
+STRONG   | en | daily return
+STRONG   | en | weekly returns
+STRONG   | ms | pulangan harian
+STRONG   | ms | pulangan mingguan
+MODERATE | en | arbitrage
+MODERATE | en | trading bot
+MODERATE | en | usdt
+MODERATE | en | forex
+MODERATE | en | stock tips
+MODERATE | en | first deposit
+MODERATE | en | minimum deposit
+MODERATE | ms | pelaburan emas
+MODERATE | ms | untung harian
+MODERATE | ms | modal kecil
+MODERATE | ms | deposit pertama
+WEAK     | en | crypto

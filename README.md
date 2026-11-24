@@ -9,6 +9,15 @@ Paste a suspicious message, link, phone number or bank account number and get th
 > Screenshots will be added in milestone M6.
 > Not affiliated with PDRM, NSRC or any bank. This tool gives advice only.
 
+## How accurate is it?
+
+ScamCheck MY uses explainable rules (keyword lists, link checks, phone and account checks), not machine learning. On messages written by someone who never saw the rules:
+
+- **No normal message was rated HIGH risk** (0 of 45).
+- **It caught 40% of scams** (10 of 25), mostly the explicit ones: fake bank, courier, e-wallet and government links, frozen-account threats, and requests for codes or fees. Subtle scams written in fresh words often come back LOW.
+
+So a **LOW result never means "safe"**, and the page says so. The [test plan](docs/TEST_PLAN.md#4-sample-sets) has the full method and numbers.
+
 ## Documentation
 
 | Document | What it covers |

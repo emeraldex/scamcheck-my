@@ -26,7 +26,7 @@ class LinkDataLoadersTest {
 
     @Test
     void bankDomainsParsesNameTokensAndDomains() {
-        List<BankDomains> banks = BankDomainsLoader.parse("b.txt", List.of(
+        List<BrandDomains> banks = BrandDomainsLoader.parse("b.txt", List.of(
                 "# header",
                 "Maybank | maybank, Maybank2u | maybank2u.com.my, maybank.com"));
 
@@ -39,11 +39,11 @@ class LinkDataLoadersTest {
 
     @Test
     void bankDomainsRejectsMalformedLinesAndSharedDomains() {
-        assertThatThrownBy(() -> BankDomainsLoader.parse("b.txt", List.of("Maybank | maybank")))
+        assertThatThrownBy(() -> BrandDomainsLoader.parse("b.txt", List.of("Maybank | maybank")))
                 .isInstanceOf(RuleDataException.class).hasMessageContaining("b.txt:1");
-        assertThatThrownBy(() -> BankDomainsLoader.parse("b.txt", List.of("Maybank |  | maybank.com")))
+        assertThatThrownBy(() -> BrandDomainsLoader.parse("b.txt", List.of("Maybank |  | maybank.com")))
                 .isInstanceOf(RuleDataException.class).hasMessageContaining("must all be present");
-        assertThatThrownBy(() -> BankDomainsLoader.parse("b.txt", List.of(
+        assertThatThrownBy(() -> BrandDomainsLoader.parse("b.txt", List.of(
                 "A | a | shared.com",
                 "B | b | shared.com")))
                 .isInstanceOf(RuleDataException.class).hasMessageContaining("b.txt:2");
@@ -51,7 +51,7 @@ class LinkDataLoadersTest {
 
     @Test
     void shippedLinkDataFilesLoad() {
-        assertThat(BankDomainsLoader.loadResource("/rules/bank-domains.txt")).hasSizeGreaterThanOrEqualTo(10);
+        assertThat(BrandDomainsLoader.loadResource("/rules/bank-domains.txt")).hasSizeGreaterThanOrEqualTo(10);
         assertThat(SimpleListLoader.loadResource("/rules/url-shorteners.txt")).contains("bit.ly");
         assertThat(SimpleListLoader.loadResource("/rules/unusual-tlds.txt")).contains("xyz");
         assertThat(SimpleListLoader.loadResource("/rules/tlds.txt")).contains("com", "my");

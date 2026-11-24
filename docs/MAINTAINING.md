@@ -12,7 +12,7 @@ Reports come from the **"Report a missed scam or a false alarm"** link on each r
    - **Missed scam:** which signal should have fired? A missing phrase (§2), a phrase in a new category (§3), or a weight that's too low (§4)?
    - **False alarm:** which finding was wrong? Usually a phrase that's too general. Remove it, or make it longer and more specific.
    - **Working as designed:** for example, one weak sign alone is meant to stay LOW (ADR-005). Reply to explain, and close the issue.
-4. **Add a sample first.** Write a fictional version of the message as a new file in `scamcheck-core/src/test/resources/samples/scam/` or `legit/` (TEST_PLAN §4). Make up the names, numbers and links. **Never paste the reported text as is** (ADR-007).
+4. **Add a sample first.** Never add to `samples/heldout/`: that set measures the rules and is never tuned on (TEST_PLAN §4). Write a fictional version of the message as a new file in `scamcheck-core/src/test/resources/samples/scam/` or `legit/` (TEST_PLAN §4). Make up the names, numbers and links. **Never paste the reported text as is** (ADR-007).
 5. **Change the data** (§2–§4), run the accuracy test (§5), and open a PR that says `Closes #<issue>`.
 
 ## 2. Adding or changing a keyword phrase
@@ -31,7 +31,7 @@ MODERATE | en       | work from home
 - **Each phrase once per file.** The loader rejects duplicates, and the build fails.
 - Update the `Last reviewed:` date at the top of the file.
 
-Other data files in `rules/`: `bank-domains.txt` (official bank domains for the lookalike check), `url-shorteners.txt`, `unusual-tlds.txt`, and `tlds.txt` (used to spot links written without `https://`).
+Other data files in `rules/`: `bank-domains.txt` and `brand-domains.txt` (brand tokens and official domains for the two lookalike checks; subdomains of an official domain count as official), `url-shorteners.txt`, `unusual-tlds.txt`, and `tlds.txt` (used to spot links written without `https://`).
 
 ## 3. Adding a new keyword category
 

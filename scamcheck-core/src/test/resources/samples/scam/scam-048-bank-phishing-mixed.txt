@@ -1,0 +1,5 @@
+# kind: scam
+# type: bank-phishing
+# lang: mixed
+
+Hi, ini dari bahagian kad kredit bank. Kami detect transaksi RM2,450 kat Lazada guna kad you. Kalau bukan you, pls bagi kod 6 digit yang baru masuk kat phone tu utk kami batalkan.

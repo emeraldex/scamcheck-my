@@ -1,0 +1,5 @@
+# kind: legit
+# type: fraud-alert
+# lang: en
+
+CIMB: A card transaction of RM1,248.00 at an online merchant was declined for your security. If you did not attempt this, please call the number on the back of your card. CIMB will never ask for your PIN or TAC.

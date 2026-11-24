@@ -1,0 +1,5 @@
+# kind: scam
+# type: ewallet
+# lang: en
+
+TNG eWallet: We noticed a login attempt from a new device in Johor Bahru. If this was not you, secure your account immediately at https://tng-ewallet-help.com/secure and enter your PIN to cancel the request.

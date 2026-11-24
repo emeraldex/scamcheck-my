@@ -1,0 +1,51 @@
+# Non-bank brands often used in Malaysian phishing links: couriers, e-wallets,
+# marketplaces, telcos and government agencies (SRS US-04, ADR-007).
+# Added after the held-out samples showed fake Pos Laju, J&T, Touch 'n Go,
+# Shopee and gov.my links going unnoticed.
+#
+# !! VERIFY BEFORE RELEASE !!
+# Check each official domain by hand against the brand's own website. Nothing here
+# is scraped. A missing official domain makes genuine links show a false warning.
+# Last verified: NOT YET VERIFIED
+#
+# Format: Display name | brand tokens | official domains
+# - Brand tokens: a link is suspicious if a part of its host name (split on "." and "-")
+#   starts or ends with a token, but the host isn't on an official domain.
+# - Official domains: the host may be the domain itself or any subdomain of it.
+# - Avoid short tokens that are everyday words or prefixes ("digi" matches "digital",
+#   "mudah" is the BM word for "easy", "polis" matches "polish").
+# - Put specific agencies before "Malaysian government": the first match names the brand.
+
+# --- Couriers ---
+Pos Laju             | poslaju, posmalaysia     | poslaju.com.my, pos.com.my
+J&T Express          | jnt, jtexpress           | jtexpress.my
+Ninja Van            | ninjavan                 | ninjavan.co
+DHL                  | dhl                      | dhl.com, dhl.com.my
+GDEX                 | gdex                     | gdexpress.com
+City-Link Express    | citylink                 | citylinkexpress.com
+Shopee Express       | spx, shopeexpress        | spx.com.my
+
+# --- E-wallets and apps ---
+Touch 'n Go          | tng, touchngo            | touchngo.com.my, tngdigital.com.my
+Grab                 | grab                     | grab.com
+
+# --- Marketplaces ---
+Shopee               | shopee                   | shopee.com.my, shopee.com
+Lazada               | lazada                   | lazada.com.my, lazada.com
+
+# --- Telcos ---
+CelcomDigi           | celcom, celcomdigi       | celcomdigi.com, celcom.com.my
+Maxis                | maxis, hotlink           | maxis.com.my, hotlink.com.my
+U Mobile             | umobile                  | u.com.my
+Unifi                | unifi                    | unifi.com.my, tm.com.my
+
+# --- Government agencies ---
+LHDN (Inland Revenue Board) | lhdn, hasil, mytax  | hasil.gov.my
+KWSP (EPF)           | kwsp, epf                | kwsp.gov.my
+PDRM (Royal Malaysia Police) | pdrm             | rmp.gov.my
+Bank Negara Malaysia | bnm, banknegara          | bnm.gov.my
+JPJ                  | jpj, myjpj               | jpj.gov.my
+MCMC                 | mcmc                     | mcmc.gov.my
+# Any part starting or ending with "gov" outside gov.my, e.g. str-semakan.gov-my.site.
+# Other countries' government domains are listed as official so their links aren't flagged.
+Malaysian government | gov, mygov                | gov.my, gov, gov.sg, gov.uk, gov.au

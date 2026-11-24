@@ -1,0 +1,5 @@
+# kind: scam
+# type: qr-code
+# lang: ms
+
+Hai, kami dari pasukan promosi pasar raya. Imbas kod QR pada risalah yg kami tinggalkan di peti surat anda utk tebus baucar belian RM50. Lepas imbas, ikut arahan utk pasang aplikasi ganjaran kami.

@@ -1,0 +1,5 @@
+# kind: legit
+# type: jpj-reminder
+# lang: ms
+
+Peringatan JPJ: Lesen memandu anda akan tamat tempoh pada 18 Dis 2026. Pembaharuan boleh dibuat di kaunter JPJ, pejabat pos atau melalui aplikasi MyJPJ.

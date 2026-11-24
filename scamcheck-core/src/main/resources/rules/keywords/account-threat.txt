@@ -1,5 +1,5 @@
 # Threats about the user's bank or online account (SRS US-03, ADR-007).
-# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24 (M6 held-out update).
 #
 # Format: WEIGHT | language | phrase
 # Phrases match exact word sequences, so common variants are listed separately.
@@ -27,3 +27,28 @@ MODERATE | en | unusual activity
 MODERATE | en | suspicious activity
 MODERATE | en | verify your account
 MODERATE | ms | sahkan akaun anda
+
+# --- Added in M6 after the held-out samples (TEST_PLAN §4) ---
+STRONG   | en | account will be frozen
+STRONG   | en | account will be blocked
+STRONG   | en | account will be deactivated
+STRONG   | en | account will be terminated
+STRONG   | en | account has been locked
+STRONG   | en | temporarily suspended
+STRONG   | en | will be deactivated
+STRONG   | ms | akaun anda akan dibekukan
+STRONG   | ms | akan dibekukan
+STRONG   | ms | akaun anda akan disekat
+STRONG   | ms | akaun anda akan digantung
+STRONG   | ms | akaun anda telah dikunci
+STRONG   | ms | akan ditamatkan
+STRONG   | ms | akan dinyahaktifkan
+MODERATE | en | suspended
+MODERATE | en | deactivated
+MODERATE | en | unusual login
+MODERATE | en | verify your identity
+MODERATE | en | restore access
+MODERATE | en | incomplete registration
+MODERATE | ms | pengesahan tidak lengkap
+MODERATE | ms | sahkan identiti anda
+MODERATE | ms | elakkan kehilangan

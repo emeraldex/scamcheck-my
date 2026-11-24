@@ -11,7 +11,7 @@
 #   starts or ends with a token, but its domain isn't one of the official ones.
 # - Official domains: registrable domains only (e.g. maybank2u.com.my, not www.maybank2u.com.my).
 
-Maybank             | maybank, maybank2u       | maybank2u.com.my, maybank.com
+Maybank             | maybank, maybank2u, m2u  | maybank2u.com.my, maybank.com
 CIMB Bank           | cimb, cimbclicks         | cimb.com.my, cimbclicks.com.my, cimb.com
 Public Bank         | pbebank, publicbank      | pbebank.com
 RHB Bank            | rhb                      | rhbgroup.com

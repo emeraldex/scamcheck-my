@@ -1,0 +1,5 @@
+# kind: legit
+# type: event-ticket
+# lang: en
+
+Your booking is confirmed! 2 tickets for Moana 2 at GSC Mid Valley, Sat 29 Nov, 4:30pm, Hall 7, seats F11-F12. Show this e-ticket at the entrance. Enjoy the movie!
