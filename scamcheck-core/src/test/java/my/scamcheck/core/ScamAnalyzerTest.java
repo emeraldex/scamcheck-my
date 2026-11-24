@@ -104,6 +104,34 @@ class ScamAnalyzerTest {
         }
 
         @Test
+        void accountNumberAloneIsLowButReported() { // SRS US-06 AC1, AC4
+            RiskAssessment result = analyze("No akaun saya 5123 4567 8901");
+
+            assertThat(result.level()).isEqualTo(RiskLevel.LOW);
+            assertThat(result.score()).isEqualTo(5);
+            assertThat(result.findings()).extracting(Finding::ruleId).containsExactly("account.detected");
+        }
+
+        @Test
+        void urgentTransferToAccountIsMedium() {
+            RiskAssessment result = analyze("Bank in segera ke akaun 5123 4567 8901");
+
+            // urgency MODERATE 20 + account INFO 5 = 25
+            assertThat(result.score()).isEqualTo(25);
+            assertThat(result.level()).isEqualTo(RiskLevel.MEDIUM);
+        }
+
+        @Test
+        void impersonationWithOverseasNumberIsReported() {
+            RiskAssessment result = analyze("Pegawai polis di sini. Hubungi +855 12 345 678 dengan segera.");
+
+            assertThat(result.findings()).extracting(Finding::ruleId)
+                    .contains("keyword.impersonation", "keyword.urgency", "phone.international");
+            // impersonation 20 + urgency 20 + phone 10 = 50
+            assertThat(result.level()).isEqualTo(RiskLevel.MEDIUM);
+        }
+
+        @Test
         void ordinaryMessageIsLowWithNoFindings() { // SRS US-02 AC2
             RiskAssessment result = analyze("Jom makan tengah hari esok?");
 
