@@ -1,0 +1,4 @@
+# kind: legit | type: account-setup | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Don't forget to verify your account email to finish setting up your Netflix profile.

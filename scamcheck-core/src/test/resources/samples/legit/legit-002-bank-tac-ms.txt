@@ -1,0 +1,4 @@
+# kind: legit | type: bank-tac | lang: ms
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+TAC anda untuk pemindahan RM120.00 ialah 551203. Jangan kongsi TAC ini dengan sesiapa.

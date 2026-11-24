@@ -1,0 +1,4 @@
+# kind: legit | type: news | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Bank Negara Malaysia announced the OPR remains at 3.00%.

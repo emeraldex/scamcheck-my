@@ -1,0 +1,4 @@
+# kind: scam | type: romance | lang: en
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+My dear, I am stuck at the airport and customs is holding my package of gold for you. Please send RM5,000 immediately so they release it.

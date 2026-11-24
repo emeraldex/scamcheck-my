@@ -1,0 +1,4 @@
+# kind: legit | type: promotion | lang: ms
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Promo Raya: diskaun 30% untuk semua baju kurung, hari ini sahaja!

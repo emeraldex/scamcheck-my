@@ -1,0 +1,4 @@
+# kind: scam | type: government-aid | lang: ms
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Bantuan Tunai Rahmah tambahan RM1,000! Semak kelayakan dan masukkan butiran bank anda di str-bantuan.online sekarang, peluang terakhir.

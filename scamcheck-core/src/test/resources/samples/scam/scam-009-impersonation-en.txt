@@ -1,0 +1,4 @@
+# kind: scam | type: impersonation | lang: en
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Customs department: your parcel contains illegal items. A police officer will contact you. Pay the release fee within 24 hours or face arrest.

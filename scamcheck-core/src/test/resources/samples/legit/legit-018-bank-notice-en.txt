@@ -1,0 +1,4 @@
+# kind: legit | type: bank-notice | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+CIMB: Your monthly statement is ready. View it in the CIMB OCTO app.

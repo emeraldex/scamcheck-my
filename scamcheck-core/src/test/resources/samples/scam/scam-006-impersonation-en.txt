@@ -1,0 +1,4 @@
+# kind: scam | type: impersonation | lang: en
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+This is Inspector Tan from Bukit Aman. There is an arrest warrant in your name for money laundering. Transfer your savings to a safe account for checking immediately.

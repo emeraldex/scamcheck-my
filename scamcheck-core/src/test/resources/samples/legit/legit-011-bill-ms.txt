@@ -1,0 +1,4 @@
+# kind: legit | type: bill | lang: ms
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Bayaran bil elektrik TNB anda sebanyak RM87.20 telah diterima. Terima kasih.

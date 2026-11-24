@@ -1,0 +1,4 @@
+# kind: scam | type: loan | lang: ms
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Pinjaman peribadi tanpa dokumen, lulus segera! Bayar yuran proses RM300 dahulu ke akaun 5123 4567 8901.

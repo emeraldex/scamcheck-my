@@ -1,0 +1,4 @@
+# kind: legit | type: bank-tac | lang: en
+# Source: written to resemble ordinary bank, delivery, work and family messages.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Your TAC for a transfer of RM50.00 to ALI BIN ABU is 482910. Never share your TAC with anyone.

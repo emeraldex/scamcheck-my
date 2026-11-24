@@ -1,0 +1,4 @@
+# kind: scam | type: shopping | lang: en
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Your Lazada order payment failed. Update your card details within 24 hours at lazada-payment.site or your order will be cancelled.

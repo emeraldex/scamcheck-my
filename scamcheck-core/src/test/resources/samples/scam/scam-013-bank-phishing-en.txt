@@ -1,0 +1,4 @@
+# kind: scam | type: bank-phishing | lang: en
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Public Bank: unusual activity detected. Your account will be suspended today. Log in at pbebank-update.online to keep access.

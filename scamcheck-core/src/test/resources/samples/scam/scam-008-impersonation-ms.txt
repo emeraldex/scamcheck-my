@@ -1,0 +1,4 @@
+# kind: scam | type: impersonation | lang: ms
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Notis LHDN: anda mempunyai tunggakan cukai. Saman mahkamah akan dikeluarkan dalam masa 24 jam. Hubungi 03-1234 567 segera.

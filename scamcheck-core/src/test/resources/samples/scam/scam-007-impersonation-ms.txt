@@ -1,0 +1,4 @@
+# kind: scam | type: impersonation | lang: ms
+# Source: paraphrased from common patterns in public scam-awareness material.
+# Fictional sample: names, numbers and links are made up (ADR-007).
+Ini pegawai polis dari IPD. Akaun anda terlibat dalam pengubahan wang haram. Sila pindahkan wang ke akaun selamat 5123 4567 8901 dengan segera.
