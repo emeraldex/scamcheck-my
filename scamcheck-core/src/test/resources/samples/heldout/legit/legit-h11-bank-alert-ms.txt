@@ -1,0 +1,5 @@
+# kind: legit
+# type: bank-alert
+# lang: ms
+
+CIMB: Log masuk ke CIMB Clicks dikesan pada 24/11 21:14 dari peranti baharu. Jika bukan anda, hubungi talian rasmi di belakang kad anda. CIMB tidak akan meminta TAC atau kata laluan anda.

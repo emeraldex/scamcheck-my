@@ -37,7 +37,9 @@ class NoInputLoggingTest {
     void successfulAnalysisDoesNotLogInput(CapturedOutput output) {
         post("{\"text\": \"" + CANARY + " akaun anda dibekukan segera\"}", HttpStatus.OK);
 
-        assertThat(output).contains("analysis length=");
+        // The metadata line is there, so maintainers can see which rules fire...
+        assertThat(output).contains("language=ms level=MEDIUM score=55");
+        // ...but never the text itself.
         assertThat(output.getAll().toLowerCase()).doesNotContain(CANARY);
     }
 
@@ -45,6 +47,7 @@ class NoInputLoggingTest {
     void tooLongInputDoesNotLogInput(CapturedOutput output) {
         post("{\"text\": \"" + (CANARY + " ").repeat(600) + "\"}", HttpStatus.BAD_REQUEST);
 
+        assertThat(output).contains("analysis rejected reason=validation-error field=text");
         assertThat(output.getAll().toLowerCase()).doesNotContain(CANARY);
     }
 
@@ -52,6 +55,7 @@ class NoInputLoggingTest {
     void malformedRequestDoesNotLogInput(CapturedOutput output) {
         post("{\"text\": \"" + CANARY + "\", \"language\": \"fr\"}", HttpStatus.BAD_REQUEST);
 
+        assertThat(output).contains("analysis rejected reason=malformed-request");
         assertThat(output.getAll().toLowerCase()).doesNotContain(CANARY);
     }
 

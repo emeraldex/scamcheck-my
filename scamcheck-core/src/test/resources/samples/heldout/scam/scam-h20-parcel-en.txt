@@ -1,0 +1,5 @@
+# kind: scam
+# type: parcel
+# lang: en
+
+J&T Express: Your parcel contains items requiring a tax payment of RM3.50. Pay now to schedule delivery: https://jnt-my.cc/pay

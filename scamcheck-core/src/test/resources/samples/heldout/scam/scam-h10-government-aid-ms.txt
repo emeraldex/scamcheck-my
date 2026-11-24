@@ -1,0 +1,5 @@
+# kind: scam
+# type: government-aid
+# lang: ms
+
+STR Fasa 4: Permohonan anda telah diluluskan. Sila sahkan maklumat akaun bank anda untuk penyaluran bantuan RM500 di https://str-semakan.gov-my.site

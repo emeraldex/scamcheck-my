@@ -17,6 +17,7 @@ Each ADR records one significant decision: the context, the choice, and its cons
 | [009](009-localisation-message-keys.md) | Message keys in core, translations in the adapter | Accepted | US-09, G5 |
 | [010](010-explicit-request-validation.md) | Explicit request validation instead of Bean Validation | Proposed | US-10 AC2 (amends 003) |
 | [011](011-docker-on-render-free.md) | One Docker image, deployed to Render's free tier | Proposed | NFR-08, R8 |
+| [012](012-missed-scam-reports-via-github-issues.md) | Missed-scam reports through a public GitHub issue form | Proposed | R9 (follows up 008) |
 
 ## Adding an ADR
 

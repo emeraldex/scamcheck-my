@@ -1,0 +1,5 @@
+# kind: scam
+# type: ewallet
+# lang: ms
+
+TnG eWallet: Akaun anda akan dibekukan kerana pengesahan tidak lengkap. Sila log masuk semula melalui https://tng-ewallet-verify.xyz untuk mengelakkan kehilangan baki.
