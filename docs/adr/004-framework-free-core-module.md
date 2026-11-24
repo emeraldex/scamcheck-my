@@ -1,6 +1,6 @@
 # ADR-004: Two modules with an enforced framework-free core
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 
 ## Context

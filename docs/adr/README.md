@@ -6,15 +6,15 @@ Each ADR records one significant decision: the context, the choice, and its cons
 
 | # | Title | Status | Resolves |
 |---|---|---|---|
-| [001](001-record-architecture-decisions.md) | Record architecture decisions | Proposed | — |
-| [002](002-pluggable-rule-engine.md) | Pluggable rule engine with up-front extraction | Proposed | NFR-06, R9 |
-| [003](003-spring-boot-thin-adapter.md) | Spring Boot 4 on Java 21 as a thin adapter | Proposed | Plan §6 |
-| [004](004-framework-free-core-module.md) | Two modules with an enforced framework-free core | Proposed | NFR-06, NFR-07 |
-| [005](005-scoring-model.md) | Category-capped weighted scoring | Proposed | SRS Q1, R2 |
-| [006](006-static-web-ui.md) | Static HTML/JS page instead of Thymeleaf | Proposed | SRS Q4, Plan §5 |
-| [007](007-rule-data-and-sample-sets.md) | Rule data and sample sets as versioned text files | Proposed | SRS Q2, Q3, Q5 |
-| [008](008-privacy-stateless-no-input-logging.md) | Stateless service with no input logging | Proposed | US-10, R5 |
-| [009](009-localisation-message-keys.md) | Message keys in core, translations in the adapter | Proposed | US-09, G5 |
+| [001](001-record-architecture-decisions.md) | Record architecture decisions | Accepted | — |
+| [002](002-pluggable-rule-engine.md) | Pluggable rule engine with up-front extraction | Accepted | NFR-06, R9 |
+| [003](003-spring-boot-thin-adapter.md) | Spring Boot 4 on Java 21 as a thin adapter | Accepted | Plan §6 |
+| [004](004-framework-free-core-module.md) | Two modules with an enforced framework-free core | Accepted | NFR-06, NFR-07 |
+| [005](005-scoring-model.md) | Category-capped weighted scoring | Accepted | SRS Q1, R2 |
+| [006](006-static-web-ui.md) | Static HTML/JS page instead of Thymeleaf | Accepted | SRS Q4, Plan §5 |
+| [007](007-rule-data-and-sample-sets.md) | Rule data and sample sets as versioned text files | Accepted | SRS Q2, Q3, Q5 |
+| [008](008-privacy-stateless-no-input-logging.md) | Stateless service with no input logging | Accepted | US-10, R5 |
+| [009](009-localisation-message-keys.md) | Message keys in core, translations in the adapter | Accepted | US-09, G5 |
 
 ## Adding an ADR
 

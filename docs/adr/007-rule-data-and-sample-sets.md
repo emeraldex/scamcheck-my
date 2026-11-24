@@ -1,6 +1,6 @@
 # ADR-007: Rule data and sample sets as versioned text files
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 - **Resolves:** SRS open questions Q2 (genuine bank domains), Q3 (account formats), Q5 (sample sets)
 

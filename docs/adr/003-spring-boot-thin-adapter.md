@@ -1,6 +1,6 @@
 # ADR-003: Spring Boot 4 on Java 21 as a thin adapter
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 
 ## Context

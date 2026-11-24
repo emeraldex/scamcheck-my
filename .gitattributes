@@ -1,0 +1,6 @@
+# Keep LF in the repo so mvnw works on Linux CI and container hosts.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.jar binary
+*.png binary

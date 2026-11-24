@@ -14,6 +14,7 @@ This is a solo portfolio project, but it follows a team workflow on purpose. See
   | `docs/` | `docs/srs` |
   | `test/` | `test/link-rule-cases` |
   | `chore/` | `chore/ci-setup` |
+  | `build/` | `build/maven-skeleton` |
 
 - Use the story ID from the [SRS](docs/SRS.md) in feature branch names.
 - PRs are **squash merged**, so `main` gets one clean commit per story. The PR title becomes that commit message, so write it as a Conventional Commit.

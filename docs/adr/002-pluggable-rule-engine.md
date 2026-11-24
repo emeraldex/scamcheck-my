@@ -1,6 +1,6 @@
 # ADR-002: Pluggable rule engine with up-front extraction
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 
 ## Context
