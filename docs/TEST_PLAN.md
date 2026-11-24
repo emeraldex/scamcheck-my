@@ -26,7 +26,7 @@ All automated tests run with `./mvnw verify`, locally and in CI on every pull re
 | **Unit** | One class in isolation: normaliser, extractors, loaders, each rule, scorer | `scamcheck-core/src/test` | `TextNormalizerTest`, `UrlExtractorTest`, `NumberExtractorTest`, `KeywordRuleTest`, `RiskScorerTest` |
 | **Rule acceptance** | The shipped data files against SRS acceptance criteria, named `usNN_acN_…` | `scamcheck-core/src/test` | `KeywordRulesTest`, `LinkRulesTest`, `PhoneFormatRuleTest`, `AccountNumberRuleTest` |
 | **Engine scenarios** | Whole messages through `ScamAnalyzer`, including the worked examples in ARCHITECTURE §4.3 | `ScamAnalyzerTest` | Investment scam with lookalike link → HIGH 90 |
-| **Sample-set accuracy** | G1/G2 over 64 sample messages (§4) | `SampleSetAccuracyTest` | ≥ 90% scams MEDIUM+, ≤ 10% legitimate HIGH |
+| **Sample-set accuracy** | G1/G2 over 64 tuning samples, and 40 held-out samples (§4) | `SampleSetAccuracyTest` | ≥ 90% scams MEDIUM+, ≤ 10% legitimate HIGH |
 | **Performance smoke** | Largest allowed input analysed well within budget | `PerformanceSmokeTest` | Engine p95 ≤ 50 ms for 5,000 chars |
 | **API integration** | HTTP contract, localisation and errors via MockMvc with the real Spring context | `scamcheck-api/src/test` | `AnalyzeControllerTest` |
 | **Privacy** | No input in logs at DEBUG, on success and error paths | `NoInputLoggingTest` | Canary string never appears in output |
@@ -59,10 +59,11 @@ All automated tests run with `./mvnw verify`, locally and in CI on every pull re
 
 ```
 scamcheck-core/src/test/resources/samples/
-├── scam/    32 messages: investment, police/agency impersonation, bank phishing, TAC/OTP,
-│            parcel, prize, job, loan, romance, shopping, government aid, telco, family
-└── legit/   32 messages: bank TAC notices, card alerts, deliveries, receipts, promotions,
-             government reminders, work, family and casual chat (incl. "untung")
+├── scam/      32 messages: investment, police/agency impersonation, bank phishing, TAC/OTP,
+│              parcel, prize, job, loan, romance, shopping, government aid, telco, family
+├── legit/     32 messages: bank TAC notices, card alerts, deliveries, receipts, promotions,
+│              government reminders, work, family and casual chat (incl. "untung")
+└── heldout/   40 messages (20 scam, 20 legit), written without seeing the rules. Never tuned on.
 ```
 
 - One message per file. Header lines start with `#` and record kind, type and language.
@@ -80,7 +81,30 @@ scamcheck-core/src/test/resources/samples/
 
 **What was tuned:** missed scams were prize draws, fake jobs, romance and "send me the OTP" messages. Three keyword categories were added (`keyword.prize`, `keyword.job-offer`, `keyword.money-request`) and the credential list now covers card and bank details. The scoring model (ADR-005) was **not** changed.
 
-**Limitation (be honest about this):** the same samples were used for tuning and for measuring, so 100% is optimistic. Before v1.0.0, add a second **held-out** set of at least 15 new scam and 15 new legitimate messages, written without looking at the rules, and report its numbers separately.
+**Limitation:** the tuning samples are also what the numbers above measure, so 100% is optimistic. The held-out set below shows by how much.
+
+### Held-out results (2026-11-24)
+
+A separate writer who had never seen the rule files or the tuning samples wrote 20 scam and 20 legitimate messages: Malaysian SMS and WhatsApp style, in BM, English and mixed, with informal spellings. They were added and measured **without changing any rule**.
+
+| | Tuning set | **Held-out set** | Target |
+|---|---|---|---|
+| Scam samples rated MEDIUM or HIGH | 32/32 (100%) | **5/20 (25%)** | ≥ 90% |
+| Legitimate samples rated HIGH | 0/32 (0%) | **0/20 (0%)** | ≤ 10% |
+| Legitimate samples rated MEDIUM | 0/32 | 0/20 | (no target) |
+
+**G2 holds on unseen messages. G1 does not:** the keyword rules were fitted to the tuning samples and generalise poorly. `SampleSetAccuracyTest` enforces G2 on the held-out set but only reports its scam detection. Enforcing G1 there would push us to tune to it, and then it would no longer be held out.
+
+Why the 15 held-out scams were missed:
+
+| Cause | Examples (held-out files) |
+|---|---|
+| **No matching vocabulary.** The scam's wording isn't in any list | "suspended", "deactivated", "customs clearance fee", "forward me the 6-digit code", "training kit", "deposit to lock the room", "download the APK", "2–3% daily" (h02, h07, h11, h14, h16–h19) |
+| **One signal alone stays LOW by design.** A single MODERATE finding is 20 points, under the MEDIUM threshold of 25 (ADR-005) | "tolong bank in" from a "new number" (h12), "pulangan 8% tiap minggu" (h05) |
+| **Several link signs count once.** An unusual ending plus no HTTPS is still one LINK finding, worth 10 | `http://m2u-secure-verify.xyz` (h02), `.top`/`.cc`/`.site` links (h10, h13, h20) |
+| **Lookalikes of non-bank brands** aren't checked. The lookalike rule only knows banks, and "m2u" isn't one of its brand tokens | Pos Laju, J&T, Touch 'n Go, Shopee, gov.my lookalikes (h01, h09, h10, h15, h20) |
+
+These point to rule and scoring work for a future release (§8). Once the held-out messages are used to tune, they become tuning samples, and a new held-out set must be written to measure the result.
 
 ### Adding a sample
 
@@ -130,7 +154,7 @@ Run against the packaged jar (`java -jar scamcheck-api/target/scamcheck.jar`) be
 
 ## 8. Future work
 
-- Held-out sample set (see §4 limitation)
+- Close the held-out gaps (§4): broader vocabulary, lookalikes of non-bank brands, and a review of single-signal scoring. Then move the held-out set into the tuning set and write a fresh held-out set to measure the change.
 - Browser end-to-end tests (e.g. Playwright) for the manual checklist
 - Accessibility audit with a screen reader and an automated contrast check
 - Load test on the live host to confirm NFR-01 including network time

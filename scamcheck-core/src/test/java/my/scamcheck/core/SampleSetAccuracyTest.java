@@ -30,12 +30,19 @@ import org.junit.jupiter.api.Test;
  *   <li>at most 10% of legitimate samples are rated HIGH.</li>
  * </ul>
  * Prints a per-sample report so tuning changes can be compared run to run.
+ *
+ * <p>The held-out set ({@code samples/heldout}) was written by someone who had not
+ * seen the rules, and is never used for tuning (TEST_PLAN §4). Its scam detection
+ * is reported but not enforced: it measures how well the rules generalise, and
+ * gating on it would invite tuning to it. Its false-alarm rate is enforced, as G2
+ * must hold on any normal messages.
  */
 class SampleSetAccuracyTest {
 
     private static final double MIN_SCAM_DETECTION = 0.90;
     private static final double MAX_LEGIT_HIGH = 0.10;
     private static final int MIN_SAMPLES_PER_SET = 30;
+    private static final int MIN_HELD_OUT_SAMPLES = 20;
 
     private static ScamAnalyzer analyzer;
 
@@ -76,6 +83,27 @@ class SampleSetAccuracyTest {
         assertThat(results).hasSizeGreaterThanOrEqualTo(MIN_SAMPLES_PER_SET);
         assertThat((double) high / results.size())
                 .as("share of legitimate samples rated HIGH; false alarms: %s", files(results, RiskLevel.HIGH))
+                .isLessThanOrEqualTo(MAX_LEGIT_HIGH);
+    }
+
+    @Test
+    void heldOut_scamDetectionIsReported() throws Exception {
+        List<Result> results = analyzeAll("heldout/scam");
+        long detected = results.stream().filter(r -> r.level() != RiskLevel.LOW).count();
+
+        report("heldout/scam", results, "MEDIUM or HIGH", detected);
+        assertThat(results).hasSizeGreaterThanOrEqualTo(MIN_HELD_OUT_SAMPLES);
+    }
+
+    @Test
+    void heldOut_g2_atMost10PercentOfLegitimateMessagesAreHigh() throws Exception {
+        List<Result> results = analyzeAll("heldout/legit");
+        long high = results.stream().filter(r -> r.level() == RiskLevel.HIGH).count();
+
+        report("heldout/legit", results, "HIGH", high);
+        assertThat(results).hasSizeGreaterThanOrEqualTo(MIN_HELD_OUT_SAMPLES);
+        assertThat((double) high / results.size())
+                .as("share of held-out legitimate samples rated HIGH; false alarms: %s", files(results, RiskLevel.HIGH))
                 .isLessThanOrEqualTo(MAX_LEGIT_HIGH);
     }
 

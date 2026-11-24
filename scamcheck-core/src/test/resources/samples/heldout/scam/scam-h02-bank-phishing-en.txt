@@ -1,0 +1,5 @@
+# kind: scam
+# type: bank-phishing
+# lang: en
+
+MAYBANK: Your account has been temporarily suspended due to an unusual login attempt. Verify your identity at http://m2u-secure-verify.xyz to restore access.

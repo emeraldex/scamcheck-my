@@ -1,0 +1,5 @@
+# kind: legit
+# type: chat
+# lang: ms
+
+Weh, aku dah sampai kedai. Ko nak teh o ais limau ke kopi? Aku order dulu.
