@@ -36,12 +36,14 @@ public class AnalyzeController {
         request.validate();
         long start = System.nanoTime();
 
+        Language language = request.languageOrDefault();
         RiskAssessment assessment = analyzer.analyze(new AnalysisInput(request.text()));
-        AnalyzeResponse response = assembler.assemble(assessment, request.languageOrDefault());
+        AnalyzeResponse response = assembler.assemble(assessment, language);
 
         // Metadata only: never the input or matched text (ADR-008).
-        log.info("analysis length={} level={} score={} rules={} durationMs={}",
+        log.info("analysis length={} language={} level={} score={} rules={} durationMs={}",
                 request.text().length(),
+                language.code(),
                 assessment.level(),
                 assessment.score(),
                 assessment.findings().stream().map(Finding::ruleId).distinct().toList(),

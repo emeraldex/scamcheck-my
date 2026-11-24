@@ -275,7 +275,7 @@ Weights and thresholds are starting values. They get tuned in Phase 5 against th
 | Localisation | Core returns message keys. API resolves them with `MessageSource` (`messages_en`, `messages_ms`). A test checks every key exists in both bundles. | ADR-009, SRS US-09 |
 | Security | No input is fetched, executed or rendered as HTML. The page inserts text with `textContent`, never `innerHTML`. Strict Content-Security-Policy header. | NFR-05 |
 | Performance | Pure in-memory work. Regexes precompiled once at startup. Rule data loaded once. | NFR-01 |
-| Observability | Spring Boot Actuator `/actuator/health` (no details) for the host's health check. No other actuator endpoint is exposed. | ADR-011 |
+| Observability | One metadata log line per request: length, language, level, score, rule IDs, duration, or the rejection reason. Never input. Actuator `/actuator/health` (no details) for the host's health check; no other actuator endpoint is exposed. | ADR-008, ADR-011, [Deployment](DEPLOYMENT.md#logs) |
 | Deployment | One Docker image (layered Spring Boot jar on a JRE 21 base, non-root) on Render's free tier, defined in `render.yaml`. CI builds and smoke-tests the image. | NFR-08, ADR-011, [Deployment](DEPLOYMENT.md) |
 
 ---
