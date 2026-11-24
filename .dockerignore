@@ -1,0 +1,12 @@
+# Only the build files and sources go into the image build.
+**/target/
+.git/
+.github/
+.idea/
+.vscode/
+docs/
+*.md
+*.iml
+Dockerfile
+.dockerignore
+render.yaml

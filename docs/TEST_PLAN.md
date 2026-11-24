@@ -33,6 +33,8 @@ All automated tests run with `./mvnw verify`, locally and in CI on every pull re
 | **Localisation completeness** | Every message key exists in EN and BM, for API and UI | `MessageBundleCompletenessTest`, `StaticPageGuardTest` | New rule without BM text fails the build |
 | **Static page guards** | CSP and XSS rules for the page | `StaticPageGuardTest` | No `innerHTML`, no inline scripts, no `console.` |
 | **Web and headers** | Page and assets served, security headers on every response | `WebPageTest` | `Content-Security-Policy` present on page and API |
+| **Actuator exposure** | Health check works; no other actuator endpoint is reachable | `ActuatorExposureTest` | `/actuator/env` → 404 |
+| **Container smoke** | The Docker image starts in 512 MB, passes its health check and answers correctly | CI job `Docker image` | Known scam → HIGH; not running as root |
 | **Manual** | Real browser behaviour (§6) | Checklist below | 360 px layout, language toggle |
 
 ## 3. Requirements coverage
@@ -47,7 +49,8 @@ All automated tests run with `./mvnw verify`, locally and in CI on every pull re
 | **G6 / NFR-01** p95 < 500 ms | `PerformanceSmokeTest` (engine), smoke test on the live URL (M6) |
 | **G7** CI green, coverage met | CI workflow, JaCoCo gate |
 | **NFR-04** no storage or logging of input | `NoInputLoggingTest`, redacted `toString` tests, ADR-008 |
-| **NFR-05** security | `WebPageTest`, `StaticPageGuardTest`, `AnalyzeControllerTest` (size limit, errors never echo input) |
+| **NFR-05** security | `WebPageTest`, `StaticPageGuardTest`, `AnalyzeControllerTest` (size limit, errors never echo input), `ActuatorExposureTest` |
+| **NFR-08** runs as one Docker container | CI job `Docker image` (build, health check, smoke test) |
 | **NFR-06** new rule without touching others | `ScamAnalyzerTest.Wiring` (hand-made rule plugs in) |
 | **NFR-07** every rule has positive and negative tests | Rule acceptance tests |
 | **SRS stories US-01 to US-14** | Each test names the story and criterion it covers; see PR descriptions for the mapping |
@@ -122,6 +125,8 @@ Run against the packaged jar (`java -jar scamcheck-api/target/scamcheck.jar`) be
 | Links never fetched | URL extraction only parses text (SRS US-04 AC8) |
 | Vulnerable dependencies | Dependabot weekly PRs; each must pass CI |
 | Secrets | None in the repository; the app needs no secrets |
+| Management endpoints | Only `/actuator/health`, without details (`ActuatorExposureTest`, ADR-011) |
+| Container | Runs as a non-root user on a JRE-only image (CI `Docker image` job) |
 
 ## 8. Future work
 

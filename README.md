@@ -18,6 +18,7 @@ Paste a suspicious message, link, phone number or bank account number and get th
 | [API spec](docs/api/openapi.yaml) | OpenAPI 3.1 for `POST /api/v1/analyze` |
 | [Wireframe](docs/WIREFRAME.md) | Page layout |
 | [Test plan](docs/TEST_PLAN.md) | Test levels, sample sets and accuracy results, coverage, manual checklist |
+| [Deployment](docs/DEPLOYMENT.md) | Docker image, Render setup, cold starts, health check |
 | [Contributing](CONTRIBUTING.md) | Branching, commit messages, PR checklist |
 
 ## Modules
@@ -38,7 +39,18 @@ Requires JDK 21. The Maven wrapper downloads the right Maven version.
 
 On Windows PowerShell, use `.\mvnw.cmd` instead of `./mvnw`.
 
-`verify` runs all tests and fails if line coverage drops below 90% in either module. The coverage report is in `<module>/target/site/jacoco/index.html`. CI runs the same command on every pull request.
+### With Docker
+
+```bash
+docker build -t scamcheck .
+docker run --rm -p 8080:8080 scamcheck
+```
+
+Then open http://localhost:8080. The health check is at `/actuator/health`. See [Deployment](docs/DEPLOYMENT.md) for the live setup on Render.
+
+### Tests and coverage
+
+`verify` runs all tests and fails if line coverage drops below 90% in either module. The coverage report is in `<module>/target/site/jacoco/index.html`. CI runs the same command on every pull request, then builds the Docker image and smoke-tests the running container.
 
 ## Try the API
 

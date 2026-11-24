@@ -16,6 +16,7 @@ Each ADR records one significant decision: the context, the choice, and its cons
 | [008](008-privacy-stateless-no-input-logging.md) | Stateless service with no input logging | Accepted | US-10, R5 |
 | [009](009-localisation-message-keys.md) | Message keys in core, translations in the adapter | Accepted | US-09, G5 |
 | [010](010-explicit-request-validation.md) | Explicit request validation instead of Bean Validation | Proposed | US-10 AC2 (amends 003) |
+| [011](011-docker-on-render-free.md) | One Docker image, deployed to Render's free tier | Proposed | NFR-08, R8 |
 
 ## Adding an ADR
 
