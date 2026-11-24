@@ -15,6 +15,9 @@
     const STORAGE_KEY = 'scamcheck.lang';
     const RISK_ICONS = {HIGH: '▲', MEDIUM: '◆', LOW: '●'};
     const STRENGTH_DOTS = {STRONG: '●●●', MODERATE: '●●○', WEAK: '●○○', INFO: '○○○'};
+    // Missed-scam reports go to a public GitHub issue form (ADR-012). Nothing is
+    // added to the URL: the user types the report there, after removing personal details.
+    const REPORT_URL = 'https://github.com/emeraldex/scamcheck-my/issues/new?template=missed-scam.yml';
 
     const state = {lang: initialLanguage(), text: {}, lastResult: null, busy: false};
 
@@ -227,6 +230,12 @@
         const anotherButton = h('button', {type: 'button', class: 'link-button'}, t('checkAnother'));
         anotherButton.addEventListener('click', resetForm);
 
+        const report = h('div', {class: 'report'},
+            h('p', {class: 'report-prompt'}, t('reportPrompt'), ' ',
+                h('a', {href: REPORT_URL, target: '_blank', rel: 'noopener noreferrer'},
+                    t('reportLink'), h('span', {class: 'visually-hidden'}, ' ' + t('opensInNewTab')))),
+            h('p', {class: 'report-note'}, t('reportNote')));
+
         const section = h('section', {class: `result risk-${level}`, 'aria-labelledby': 'result-heading'},
             h('div', {class: 'risk-banner'}, heading, h('p', {}, data.summary)),
             h('h3', {}, t('whatToDo')),
@@ -234,6 +243,7 @@
             h('div', {class: 'help-links'}, orderedLinks.map(helpLink)),
             findings.length > 0 ? h('h3', {}, t('findingsHeading', {count: findings.length})) : null,
             findings.length > 0 ? h('ol', {class: 'findings'}, findings.map(findingItem)) : null,
+            report,
             anotherButton);
 
         dom.result.replaceChildren(section);
