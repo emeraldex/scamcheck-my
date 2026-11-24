@@ -4,7 +4,7 @@
 |---|---|
 | **Host** | Render, free web service, Singapore region |
 | **Decision** | [ADR-011](adr/011-docker-on-render-free.md) |
-| **Live URL** | *Added after the first deploy* |
+| **Live URL** | https://scamcheck-my.onrender.com |
 
 The app ships as one Docker image. It is stateless and needs no database, secrets or environment variables, so any host that runs a container can serve it.
 
@@ -20,8 +20,23 @@ The app ships as one Docker image. It is stateless and needs no database, secret
 1. Create a free account at [render.com](https://render.com) and connect GitHub, giving access to this repository only.
 2. In the Render dashboard choose **New → Blueprint**, then pick `scamcheck-my`. Render reads `render.yaml` and shows one free web service called `scamcheck-my`.
 3. Apply it. The first build takes a few minutes.
-4. Open the `https://scamcheck-my-….onrender.com` URL Render shows. Run the manual checklist in [TEST_PLAN §6](TEST_PLAN.md#6-manual-test-checklist).
+4. Open the URL Render shows and run the manual checklist in [TEST_PLAN §6](TEST_PLAN.md#6-manual-test-checklist).
 5. Put the URL in the table above and in the README.
+
+## Live smoke test (2026-11-24, first deploy)
+
+| Check | Result |
+|---|---|
+| `GET /actuator/health` | `{"status":"UP"}` |
+| `GET /actuator/env` | 404 |
+| Security headers on the page | CSP, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` all present |
+| `http://` | 301 redirect to `https://` (by Render) |
+| Investment-scam example via the API | HIGH, score 90 |
+| Empty text | 400 `validation-error` problem response, no input echoed |
+| Warm response time, 5 requests | 49–87 ms after the first (458 ms) |
+| Page in Chrome (desktop) | Example → HIGH RISK with 5 explained signs, 997 above Semak Mule; EN ↔ BM switches the result; language survives a reload; no console errors |
+
+Not yet checked on the live site: the 360 px phone layout, `tel:997` on a real phone, keyboard-only use, and a cold-start time.
 
 ## Free-tier limits
 
