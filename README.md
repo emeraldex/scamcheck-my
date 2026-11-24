@@ -35,6 +35,18 @@ Requires JDK 21. The Maven wrapper downloads the right Maven version.
 
 On Windows PowerShell, use `.\mvnw.cmd` instead of `./mvnw`.
 
+## Try the API
+
+With the app running:
+
+```bash
+curl -s -X POST http://localhost:8080/api/v1/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Pelaburan dijamin untung! Daftar segera dan berikan kod TAC.", "language": "en"}'
+```
+
+The response holds the risk level (`LOW` / `MEDIUM` / `HIGH`), the score, each warning sign found with a plain-language explanation, and links to Semak Mule and NSRC 997. `language` is `en` or `ms` (default `ms`). See the [API spec](docs/api/openapi.yaml) for the full contract.
+
 ## Licence
 
 [MIT](LICENSE)

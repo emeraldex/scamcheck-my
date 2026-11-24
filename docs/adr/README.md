@@ -15,6 +15,7 @@ Each ADR records one significant decision: the context, the choice, and its cons
 | [007](007-rule-data-and-sample-sets.md) | Rule data and sample sets as versioned text files | Accepted | SRS Q2, Q3, Q5 |
 | [008](008-privacy-stateless-no-input-logging.md) | Stateless service with no input logging | Accepted | US-10, R5 |
 | [009](009-localisation-message-keys.md) | Message keys in core, translations in the adapter | Accepted | US-09, G5 |
+| [010](010-explicit-request-validation.md) | Explicit request validation instead of Bean Validation | Proposed | US-10 AC2 (amends 003) |
 
 ## Adding an ADR
 
