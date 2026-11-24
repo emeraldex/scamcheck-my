@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ms">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ScamCheck MY</title>
+    <meta name="description" content="Semak mesej, pautan, nombor telefon atau nombor akaun yang mencurigakan. Check a suspicious message, link, phone number or account number.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <span class="brand" data-i18n="appName">ScamCheck MY</span>
+        <div class="lang-toggle" role="group" aria-label="Bahasa / Language">
+            <button type="button" data-lang="ms" aria-pressed="true">BM</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <h1 data-i18n="heading">Adakah ini penipuan?</h1>
+    <p class="intro" data-i18n="intro">Tampal mesej, pautan, nombor telefon atau nombor akaun.</p>
+
+    <form id="check-form" novalidate>
+        <label for="text-input" class="visually-hidden" data-i18n="inputLabel">Mesej untuk disemak</label>
+        <textarea id="text-input" rows="7" spellcheck="false" autocomplete="off"
+                  data-i18n-placeholder="placeholder" placeholder="Tampal di sini..."
+                  aria-describedby="counter form-error"></textarea>
+        <div class="input-meta">
+            <span id="counter" class="counter">0 / 5,000</span>
+        </div>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+        <button type="submit" id="check-button" class="btn btn-primary" data-i18n="check">Semak</button>
+        <button type="button" id="example-button" class="link-button" data-i18n="tryExample">Cuba contoh</button>
+    </form>
+
+    <p class="privacy">
+        <span aria-hidden="true">🔒</span>
+        <span data-i18n="privacy">Kami tidak menyimpan apa yang anda tampal.</span>
+    </p>
+
+    <div id="result" aria-live="polite"></div>
+
+    <noscript>
+        <p class="form-error">ScamCheck MY memerlukan JavaScript. / ScamCheck MY needs JavaScript.</p>
+    </noscript>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p data-i18n="disclaimer">Tidak bergabung dengan PDRM, NSRC atau mana-mana bank. Alat ini hanya memberi nasihat.</p>
+    </div>
+</footer>
+</body>
+</html>
