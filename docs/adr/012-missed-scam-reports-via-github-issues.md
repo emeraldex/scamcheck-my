@@ -1,6 +1,6 @@
 # ADR-012: Missed-scam reports through a public GitHub issue form
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-24
 - **Follows up:** [ADR-008](008-privacy-stateless-no-input-logging.md), which said the missed-scam report path "must be an explicit, user-initiated action with its own privacy review"
 - **Resolves:** plan risk R9 (rules go stale), plan M6 "missed-scam report path"
