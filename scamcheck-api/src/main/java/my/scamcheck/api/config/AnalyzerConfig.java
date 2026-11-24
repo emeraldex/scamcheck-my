@@ -2,7 +2,7 @@ package my.scamcheck.api.config;
 
 import my.scamcheck.core.ScamAnalyzer;
 import my.scamcheck.core.extract.InputExtractor;
-import my.scamcheck.core.rule.KeywordRules;
+import my.scamcheck.core.rule.DefaultRules;
 import my.scamcheck.core.score.RiskScorer;
 import my.scamcheck.core.score.ScoringPolicy;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ public class AnalyzerConfig {
     ScamAnalyzer scamAnalyzer() {
         return new ScamAnalyzer(
                 new InputExtractor(),
-                KeywordRules.defaults(),
+                DefaultRules.all(),
                 new RiskScorer(ScoringPolicy.defaults()));
     }
 }

@@ -87,6 +87,20 @@ class AnalyzeControllerTest {
         }
 
         @Test
+        void lookalikeBankLinkNamesTheBankInBothLanguages() { // US-04 AC1, US-09 AC2
+            String text = "Sila log masuk di https://maybank2u-secure.xyz/login";
+
+            MvcTestResult en = post("{\"text\": \"" + text + "\", \"language\": \"en\"}");
+            assertThat(en).bodyJson().extractingPath("$.findings[0].ruleId").isEqualTo("link.lookalike-bank");
+            assertThat(en).bodyJson().extractingPath("$.findings[0].matchedText").isEqualTo("maybank2u-secure.xyz");
+            assertThat(en).bodyJson().extractingPath("$.findings[0].title").isEqualTo("Link pretends to be Maybank");
+            assertThat(en).bodyJson().extractingPath("$.findings[0].explanation").asString().contains("bank's address");
+
+            assertThat(post("{\"text\": \"" + text + "\", \"language\": \"ms\"}"))
+                    .bodyJson().extractingPath("$.findings[0].title").isEqualTo("Pautan menyamar sebagai Maybank");
+        }
+
+        @Test
         void acceptsTextAtTheMaximumLength() { // US-01 AC4 boundary
             assertThat(post("{\"text\": \"" + "a".repeat(5_000) + "\"}")).hasStatusOk();
         }

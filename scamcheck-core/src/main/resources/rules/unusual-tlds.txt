@@ -1,0 +1,28 @@
+# Top-level domains often used for short-lived scam and phishing sites (SRS US-04 AC4, ADR-007).
+# Malaysian banks use .com.my or .com, so these endings are a weak warning sign.
+# Hand-curated from public reports on abused domain endings. Last reviewed: 2026-11-24.
+# One per line, lower case, without the dot.
+
+xyz
+top
+icu
+cyou
+buzz
+click
+link
+online
+site
+shop
+vip
+live
+monster
+rest
+cfd
+sbs
+bond
+quest
+win
+loan
+work
+fun
+space
