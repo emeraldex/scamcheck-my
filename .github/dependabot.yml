@@ -26,3 +26,8 @@ updates:
       interval: weekly
     commit-message:
       prefix: build
+    # The code targets Java 21 (pom.xml). Moving to a newer Java is a deliberate
+    # change to the build and the image together, not an automatic bump.
+    ignore:
+      - dependency-name: eclipse-temurin
+        update-types: ["version-update:semver-major"]
