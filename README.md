@@ -4,7 +4,9 @@
 
 Paste a suspicious message, link, phone number or bank account number and get the warning signs found, a risk level (Low / Medium / High), and links to official places to check or report: PDRM Semak Mule and the NSRC hotline 997.
 
-> **Work in progress.** Screenshots and a live demo link will be added in milestone M6.
+**Live demo: https://scamcheck-my.onrender.com**. It runs on a free instance, so the first visit after a quiet spell can take about a minute while it wakes up.
+
+> Screenshots will be added in milestone M6.
 > Not affiliated with PDRM, NSRC or any bank. This tool gives advice only.
 
 ## Documentation
