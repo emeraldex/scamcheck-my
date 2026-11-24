@@ -61,6 +61,18 @@ The container listens on `$PORT` (default 8080), which Render sets for you.
 
 `GET /actuator/health` returns `{"status":"UP"}` and nothing more. Every other actuator endpoint (`env`, `beans`, `heapdump` and so on) is turned off and returns 404. `ActuatorExposureTest` and the CI smoke test check this.
 
+## Logs
+
+Open the service in the Render dashboard and choose **Logs**. Each request writes one line of metadata, and never the pasted text or the words that matched (ADR-008):
+
+```
+analysis length=72 language=en level=HIGH score=90 rules=[keyword.investment, link.lookalike-bank, keyword.urgency, link.unusual-tld] durationMs=3
+analysis rejected reason=validation-error field=text detail="Text must be 5,000 characters or fewer."
+analysis rejected reason=malformed-request
+```
+
+Use them to see which rules fire most and the level spread, to spot slow requests, and to find clients sending bad requests. `NoInputLoggingTest` sends a canary string with logging at DEBUG and fails if it appears anywhere in the output.
+
 ## Rolling back
 
 In the Render dashboard, open the service, then **Events**, pick the last good deploy and choose **Rollback**. Then revert the bad commit on `main` with a PR, so the next deploy doesn't bring it back.
