@@ -28,5 +28,8 @@
   "strength.INFO": "Untuk makluman anda",
   "matchedText": "Ditemui dalam teks anda:",
   "opensInNewTab": "(dibuka dalam tab baharu)",
-  "checkAnother": "Semak mesej lain"
+  "checkAnother": "Semak mesej lain",
+  "reportPrompt": "Keputusan ini salah?",
+  "reportLink": "Laporkan penipuan yang terlepas atau amaran palsu",
+  "reportNote": "Ini membuka halaman awam di GitHub. Buang nama, nombor telefon dan nombor akaun sebelum menghantar."
 }

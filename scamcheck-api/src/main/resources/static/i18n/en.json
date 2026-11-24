@@ -28,5 +28,8 @@
   "strength.INFO": "For your information",
   "matchedText": "Found in your text:",
   "opensInNewTab": "(opens in a new tab)",
-  "checkAnother": "Check another message"
+  "checkAnother": "Check another message",
+  "reportPrompt": "Did we get this wrong?",
+  "reportLink": "Report a missed scam or a false alarm",
+  "reportNote": "This opens a public page on GitHub. Remove names, phone numbers and account numbers before you post."
 }

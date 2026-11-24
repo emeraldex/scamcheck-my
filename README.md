@@ -21,6 +21,7 @@ Paste a suspicious message, link, phone number or bank account number and get th
 | [Wireframe](docs/WIREFRAME.md) | Page layout |
 | [Test plan](docs/TEST_PLAN.md) | Test levels, sample sets and accuracy results, coverage, manual checklist |
 | [Deployment](docs/DEPLOYMENT.md) | Docker image, Render setup, cold starts, health check |
+| [Maintainer guide](docs/MAINTAINING.md) | Handling missed-scam reports, adding phrases and rules, releasing |
 | [Contributing](CONTRIBUTING.md) | Branching, commit messages, PR checklist |
 
 ## Modules

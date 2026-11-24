@@ -1,0 +1,72 @@
+name: Missed scam or false alarm
+description: ScamCheck MY rated a message wrongly. Help us improve the rules.
+title: "[Report] "
+labels: ["rule-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This page is public.** Anyone can read what you post here, and it can't be fully deleted.
+
+        - **Remove personal details first:** names, phone numbers, bank account numbers, addresses, IC numbers, and any links that include your details. Replace them with `[name]`, `[phone]`, `[account]` and so on.
+        - **This is not a police report.** If you've lost money or shared bank details, call the **NSRC hotline 997** now, or check a number or account on [Semak Mule](https://semakmule.rmp.gov.my).
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong?
+      options:
+        - A scam was rated too low (missed scam)
+        - A normal message was rated too high (false alarm)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rated
+    attributes:
+      label: What did ScamCheck MY say?
+      options:
+        - LOW RISK
+        - MEDIUM RISK
+        - HIGH RISK
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language of the message
+      options:
+        - Bahasa Melayu
+        - English
+        - Mixed
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: message
+    attributes:
+      label: The message, with personal details removed
+      description: Paste only what's needed to show the problem. Replace names, numbers and accounts with [name], [phone], [account].
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why do you think the rating is wrong?
+      description: For example, "this is a known parcel scam" or "this is my bank's real TAC message".
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit
+      options:
+        - label: I removed names, phone numbers, account numbers and other personal details.
+          required: true
+        - label: I understand this page is public and is not a police report.
+          required: true
