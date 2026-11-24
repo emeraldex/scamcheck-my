@@ -3,7 +3,7 @@
 # Tests run in CI, not here, so the image builds quickly on the host.
 
 # --- Build: compile and package the Spring Boot jar ---
-FROM eclipse-temurin:21-jdk-noble AS build
+FROM eclipse-temurin:25-jdk-noble AS build
 WORKDIR /src
 
 COPY .mvn/ .mvn/
@@ -20,7 +20,7 @@ RUN java -Djarmode=tools -jar scamcheck-api/target/scamcheck.jar \
         extract --layers --destination /extracted
 
 # --- Run: JRE only, no build tools, not root ---
-FROM eclipse-temurin:21-jre-noble
+FROM eclipse-temurin:25-jre-noble
 WORKDIR /app
 
 RUN groupadd --system scamcheck && useradd --system --gid scamcheck --no-create-home scamcheck
