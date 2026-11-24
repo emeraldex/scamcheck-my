@@ -1,0 +1,39 @@
+# Investment and guaranteed-return wording (SRS US-03, ADR-007).
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+#
+# Format: WEIGHT | language | phrase   (WEIGHT = INFO, WEAK, MODERATE or STRONG)
+# Phrases match whole words, ignoring case and extra spaces.
+# Single everyday words stay WEAK so casual chat isn't flagged (R2).
+
+# --- Guaranteed returns: the strongest sign ---
+STRONG   | ms | dijamin untung
+STRONG   | ms | untung dijamin
+STRONG   | ms | keuntungan dijamin
+STRONG   | ms | pulangan dijamin
+STRONG   | ms | jaminan pulangan
+STRONG   | ms | tanpa risiko
+STRONG   | en | guaranteed profit
+STRONG   | en | guaranteed profits
+STRONG   | en | guaranteed returns
+STRONG   | en | guaranteed return
+STRONG   | en | risk-free investment
+STRONG   | en | no risk
+
+# --- High or fast returns ---
+MODERATE | ms | pulangan tinggi
+MODERATE | ms | untung lumayan
+MODERATE | ms | untung besar
+MODERATE | ms | gandakan wang
+MODERATE | ms | pendapatan pasif
+MODERATE | en | high returns
+MODERATE | en | double your money
+MODERATE | en | passive income
+MODERATE | en | daily profit
+
+# --- Investment words on their own: weak, common in normal messages ---
+WEAK     | ms | pelaburan
+WEAK     | ms | untung
+WEAK     | ms | melabur
+WEAK     | en | investment
+WEAK     | en | invest
+WEAK     | en | profit
