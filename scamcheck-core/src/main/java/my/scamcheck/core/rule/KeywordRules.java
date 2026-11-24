@@ -4,7 +4,7 @@ import java.util.List;
 import my.scamcheck.core.model.Category;
 import my.scamcheck.core.rule.data.KeywordListLoader;
 
-/** Builds the five v1 keyword rules from their data files (ARCHITECTURE.md §4.2). */
+/** Builds the v1 keyword rules from their data files (ARCHITECTURE.md §4.2). */
 public final class KeywordRules {
 
     private static final String BASE = "/rules/keywords/";
@@ -18,7 +18,10 @@ public final class KeywordRules {
                 fromFile("keyword.urgency", Category.URGENCY, "urgency.txt"),
                 fromFile("keyword.account-threat", Category.ACCOUNT_THREAT, "account-threat.txt"),
                 fromFile("keyword.impersonation", Category.IMPERSONATION, "impersonation.txt"),
-                fromFile("keyword.credential-request", Category.CREDENTIAL_REQUEST, "credential-request.txt"));
+                fromFile("keyword.credential-request", Category.CREDENTIAL_REQUEST, "credential-request.txt"),
+                fromFile("keyword.prize", Category.PRIZE, "prize.txt"),
+                fromFile("keyword.job-offer", Category.JOB_OFFER, "job-offer.txt"),
+                fromFile("keyword.money-request", Category.MONEY_REQUEST, "money-request.txt"));
     }
 
     private static Rule fromFile(String id, Category category, String fileName) {

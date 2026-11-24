@@ -64,16 +64,25 @@ class ScamAnalyzerTest {
         }
 
         @Test
-        void englishPoliceImpersonationScamIsMediumWithKeywordsAlone() {
-            // impersonation STRONG 35 + urgency MODERATE 20 = 55. The "transfer your savings"
-            // request has no keyword category yet; Phase 5 tuning against the sample sets
-            // decides whether this should reach HIGH (ADR-005).
+        void englishPoliceImpersonationScamIsHigh() {
+            // impersonation STRONG 35 + urgency MODERATE 20 + money request STRONG 35 = 90.
+            // Was MEDIUM (55) in M3; the M5 money-request category ("transfer your savings")
+            // closes that gap.
             RiskAssessment result = analyze(
                     "This is a police officer. There is an arrest warrant in your name for money laundering. "
                             + "Act now and transfer your savings for checking.");
 
-            assertThat(result.score()).isEqualTo(55);
-            assertThat(result.level()).isEqualTo(RiskLevel.MEDIUM);
+            assertThat(result.score()).isEqualTo(90);
+            assertThat(result.level()).isEqualTo(RiskLevel.HIGH);
+        }
+
+        @Test
+        void prizeScamWithShortLinkIsMedium() {
+            // Was LOW (20) in M4: shortener and raw IP count once as LINK. The prize category adds 35.
+            RiskAssessment result = analyze("Tahniah! Anda memenangi RM10,000. Tuntut hadiah di bit.ly/hadiah123");
+
+            assertThat(result.findings()).extracting(Finding::ruleId).contains("keyword.prize", "link.shortener");
+            assertThat(result.level()).isNotEqualTo(RiskLevel.LOW);
         }
 
         @Test

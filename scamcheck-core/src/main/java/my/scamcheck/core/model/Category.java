@@ -10,6 +10,9 @@ public enum Category {
     ACCOUNT_THREAT,
     IMPERSONATION,
     CREDENTIAL_REQUEST,
+    PRIZE,
+    JOB_OFFER,
+    MONEY_REQUEST,
     LINK,
     PHONE,
     ACCOUNT

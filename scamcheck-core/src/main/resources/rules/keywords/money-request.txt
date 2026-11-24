@@ -1,0 +1,30 @@
+# Requests to send money: advance fees, "safe accounts", urgent transfers (ADR-007).
+# Added in M5 after the sample sets showed loan, job, romance and police scams
+# were under-rated. Hand-curated from public scam-awareness material.
+# Last reviewed: 2026-11-24.
+#
+# Format: WEIGHT | language | phrase
+# Plain "bank in" or "transfer" stay out: friends and family use them every day.
+
+# --- Classic scam money requests ---
+STRONG   | ms | akaun selamat
+STRONG   | en | safe account
+STRONG   | en | transfer your savings
+STRONG   | ms | pindahkan semua wang
+STRONG   | ms | yuran proses
+STRONG   | ms | yuran pemprosesan
+STRONG   | en | processing fee
+STRONG   | en | release fee
+STRONG   | ms | bayar deposit
+STRONG   | ms | deposit dahulu
+STRONG   | ms | caj pelepasan
+
+# --- Asking for money in a hurry or for a stranger ---
+MODERATE | ms | tolong bank in
+MODERATE | ms | pindahkan wang
+MODERATE | ms | masukkan wang
+MODERATE | ms | bayar caj
+MODERATE | en | please send
+MODERATE | en | send money
+
+WEAK     | en | top up
