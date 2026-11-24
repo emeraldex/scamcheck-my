@@ -1,0 +1,5 @@
+# kind: legit
+# type: ewallet-receipt
+# lang: en
+
+TNG eWallet: You have received RM25.00 from LEE WEI MING. Ref: Badminton court share. Check your transaction history in the app.

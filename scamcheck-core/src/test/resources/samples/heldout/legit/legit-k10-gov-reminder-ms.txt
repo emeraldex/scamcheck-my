@@ -1,0 +1,5 @@
+# kind: legit
+# type: gov-reminder
+# lang: ms
+
+Peringatan: Tarikh akhir pengemukaan BE bagi tahun taksiran 2025 ialah 30 April 2026. Sila log masuk ke MyTax melalui https://www.hasil.gov.my utk e-Filing. LHDN tidak akan meminta maklumat perbankan melalui SMS.

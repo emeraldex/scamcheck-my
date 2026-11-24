@@ -1,7 +1,7 @@
 # Requests to send money: advance fees, "safe accounts", urgent transfers (ADR-007).
 # Added in M5 after the sample sets showed loan, job, romance and police scams
 # were under-rated. Hand-curated from public scam-awareness material.
-# Last reviewed: 2026-11-24.
+# Last reviewed: 2026-11-24 (M6 held-out update).
 #
 # Format: WEIGHT | language | phrase
 # Plain "bank in" or "transfer" stay out: friends and family use them every day.
@@ -28,3 +28,25 @@ MODERATE | en | please send
 MODERATE | en | send money
 
 WEAK     | en | top up
+
+# --- Added in M6 after the held-out samples (TEST_PLAN §4) ---
+STRONG   | en | clearance fee
+STRONG   | en | customs fee
+STRONG   | en | advance fee
+STRONG   | en | withdrawal fee
+STRONG   | en | unlock fee
+STRONG   | ms | caj kastam
+STRONG   | ms | yuran kastam
+MODERATE | en | registration fee
+MODERATE | en | pay first
+MODERATE | en | deposit first
+MODERATE | en | full payment first
+MODERATE | en | tax payment
+MODERATE | en | training kit
+MODERATE | ms | yuran pendaftaran
+MODERATE | ms | bayar dulu
+MODERATE | ms | deposit dulu
+MODERATE | ms | transfer deposit
+MODERATE | ms | bayar full dulu
+MODERATE | ms | bayar penuh dahulu
+MODERATE | ms | kit latihan

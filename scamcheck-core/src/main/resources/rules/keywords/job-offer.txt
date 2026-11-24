@@ -1,6 +1,6 @@
 # Fake job and "easy commission" task scams (ADR-007).
 # Added in M5 after the sample sets showed job scams were missed.
-# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24 (M6 held-out update).
 #
 # Format: WEIGHT | language | phrase
 # Job words alone stay MODERATE: genuine job adverts use them too.
@@ -22,3 +22,13 @@ MODERATE | en | rating products
 MODERATE | en | rate products
 MODERATE | en | simple tasks
 MODERATE | en | like videos
+
+# --- Added in M6 after the held-out samples (TEST_PLAN §4) ---
+MODERATE | en | part time
+MODERATE | ms | kerja part time
+MODERATE | en | like and follow
+MODERATE | en | data entry
+MODERATE | ms | input data
+MODERATE | ms | buat dari rumah
+MODERATE | ms | tanpa pengalaman
+MODERATE | en | no experience needed

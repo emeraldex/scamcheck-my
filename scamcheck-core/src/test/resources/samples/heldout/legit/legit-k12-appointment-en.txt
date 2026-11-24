@@ -1,0 +1,5 @@
+# kind: legit
+# type: appointment
+# lang: en
+
+Reminder from Klinik Pergigian Seri Kembangan: Your appointment with Dr. Melissa is on Thu 27 Nov at 3:00pm. Reply Y to confirm or call the clinic to reschedule.

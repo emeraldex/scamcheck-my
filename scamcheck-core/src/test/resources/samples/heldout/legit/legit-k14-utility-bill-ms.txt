@@ -1,0 +1,5 @@
+# kind: legit
+# type: utility-bill
+# lang: ms
+
+TNB: Bil elektrik anda bagi bulan Oktober berjumlah RM132.40, tarikh akhir bayaran 15 Dis. Semak & bayar melalui aplikasi myTNB atau https://www.mytnb.com.my

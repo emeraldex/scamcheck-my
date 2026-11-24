@@ -1,6 +1,6 @@
 # Prize, lucky-draw and "you have won" wording (ADR-007).
 # Added in M5 after the sample sets showed prize scams were missed.
-# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24 (M6 held-out update).
 #
 # Format: WEIGHT | language | phrase
 
@@ -18,3 +18,9 @@ MODERATE | ms | pemenang
 MODERATE | en | lucky draw
 MODERATE | en | winner
 MODERATE | en | prize
+
+# --- Added in M6 after the held-out samples (TEST_PLAN §4) ---
+MODERATE | ms | anda terpilih
+MODERATE | en | you have been selected
+MODERATE | ms | hadiah tunai
+MODERATE | en | cash prize

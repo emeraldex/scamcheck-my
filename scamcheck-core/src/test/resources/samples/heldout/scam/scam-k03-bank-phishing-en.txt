@@ -1,0 +1,5 @@
+# kind: scam
+# type: bank-phishing
+# lang: en
+
+MBB: Your account has been temporarily restricted due to unusual login activity. To restore access, verify your details at https://m2u-secure-verify.com/login within 24 hours or your account will be suspended.

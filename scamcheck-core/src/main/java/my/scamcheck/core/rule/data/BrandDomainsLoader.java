@@ -9,20 +9,20 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
- * Reads {@code bank-domains.txt}: {@code Display name | token, token | domain, domain}.
- * Fails fast on malformed lines, a domain listed for two banks, or an empty file.
+ * Reads {@code bank-domains.txt} and {@code brand-domains.txt}: {@code Display name | token, token | domain, domain}.
+ * Fails fast on malformed lines, a domain listed twice, or an empty file.
  */
-public final class BankDomainsLoader {
+public final class BrandDomainsLoader {
 
-    private BankDomainsLoader() {
+    private BrandDomainsLoader() {
     }
 
-    public static List<BankDomains> loadResource(String resourcePath) {
+    public static List<BrandDomains> loadResource(String resourcePath) {
         return parse(resourcePath, SimpleListLoader.readLines(resourcePath));
     }
 
-    public static List<BankDomains> parse(String source, List<String> lines) {
-        List<BankDomains> banks = new ArrayList<>();
+    public static List<BrandDomains> parse(String source, List<String> lines) {
+        List<BrandDomains> brands = new ArrayList<>();
         Set<String> seenDomains = new HashSet<>();
 
         for (int i = 0; i < lines.size(); i++) {
@@ -45,13 +45,13 @@ public final class BankDomainsLoader {
                     throw error(source, i + 1, "domain '" + domain + "' is listed more than once");
                 }
             }
-            banks.add(new BankDomains(name, tokens, domains));
+            brands.add(new BrandDomains(name, tokens, domains));
         }
 
-        if (banks.isEmpty()) {
-            throw new RuleDataException(source + ": no banks found");
+        if (brands.isEmpty()) {
+            throw new RuleDataException(source + ": no entries found");
         }
-        return List.copyOf(banks);
+        return List.copyOf(brands);
     }
 
     private static Set<String> commaSeparated(String field) {

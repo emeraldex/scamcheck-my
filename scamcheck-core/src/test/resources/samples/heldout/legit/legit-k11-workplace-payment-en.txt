@@ -1,0 +1,5 @@
+# kind: legit
+# type: workplace-payment
+# lang: en
+
+Hi Sharon, the vendor invoice from Delta Print (INV-2291, RM3,450) has been approved by Mr. Tan. Could you process the payment through the usual finance system by Thursday? The PO is attached in the email thread.

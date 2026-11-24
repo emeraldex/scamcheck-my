@@ -232,6 +232,7 @@ Why it looks like this ([ADR-002](adr/002-pluggable-rule-engine.md)):
 | `keyword.job-offer` (added M5) | JOB_OFFER | US-03 | MODERATE to STRONG |
 | `keyword.money-request` (added M5) | MONEY_REQUEST | US-03 | WEAK to STRONG |
 | `link.lookalike-bank` | LINK | US-04 | STRONG |
+| `link.lookalike-brand` (added M6) | LINK | US-04 | STRONG |
 | `link.shortener` | LINK | US-04 | MODERATE |
 | `link.unusual-tld` | LINK | US-04 | WEAK |
 | `link.raw-ip` | LINK | US-04 | MODERATE |
@@ -240,7 +241,7 @@ Why it looks like this ([ADR-002](adr/002-pluggable-rule-engine.md)):
 | `phone.international` | PHONE | US-05 | WEAK |
 | `account.detected` | ACCOUNT | US-06 | INFO |
 
-The eight keyword rules share one implementation (`KeywordRule`), configured from a different data file each ([ADR-007](adr/007-rule-data-and-sample-sets.md)).
+The eight keyword rules share one implementation (`KeywordRule`), configured from a different data file each ([ADR-007](adr/007-rule-data-and-sample-sets.md)). The two lookalike rules share `LookalikeDomainRule`: one reads `bank-domains.txt`, the other `brand-domains.txt` (couriers, e-wallets, marketplaces, telcos and government agencies). A host on an official domain, or a subdomain of one, is never flagged.
 
 ### 4.3 Scoring
 

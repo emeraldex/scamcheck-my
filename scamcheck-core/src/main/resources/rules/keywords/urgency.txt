@@ -1,5 +1,5 @@
 # Urgency and time-pressure wording (SRS US-03, ADR-007).
-# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24 (M6 held-out update).
 #
 # Format: WEIGHT | language | phrase
 
@@ -21,3 +21,9 @@ WEAK     | ms | terhad
 WEAK     | en | urgent
 WEAK     | en | hurry
 WEAK     | en | limited time
+
+# --- Added in M6 after the held-out samples (TEST_PLAN §4) ---
+WEAK     | en | asap
+WEAK     | en | as soon as possible
+WEAK     | ms | secepat mungkin
+WEAK     | ms | tarikh akhir

@@ -1,0 +1,5 @@
+# kind: scam
+# type: telco
+# lang: en
+
+Dear customer, your SIM card registration will be deactivated tonight as your MyKad details failed MCMC verification. Press 1 to speak to our officer, or reply with your full name, IC number and the 6-digit code we just sent to keep your number active.

@@ -1,0 +1,5 @@
+# kind: legit
+# type: bank-statement
+# lang: ms
+
+Bank Islam: Penyata akaun bulanan anda bagi November 2026 kini tersedia. Log masuk ke GO by Bank Islam utk melihat. Bank Islam tidak akan meminta nombor PIN atau TAC anda melalui SMS atau panggilan.

@@ -1,0 +1,5 @@
+# kind: legit
+# type: delivery-food
+# lang: mixed
+
+Hi kak, saya rider GrabFood, dah sampai depan guardhouse. Pak guard x bagi masuk, akak boleh turun ambil ke? Order nasi lemak 2 bungkus.

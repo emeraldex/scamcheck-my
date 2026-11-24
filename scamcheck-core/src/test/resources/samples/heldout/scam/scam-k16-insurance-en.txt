@@ -1,0 +1,5 @@
+# kind: scam
+# type: insurance
+# lang: en
+
+Hello Mr. Lim, this is Jessica from the claims department. Our records show you have an unclaimed medical insurance refund of RM2,140 from 2023. To process it, please download our claims app from https://claim-refund-my.app/download and log in with your banking details so we can credit you directly.

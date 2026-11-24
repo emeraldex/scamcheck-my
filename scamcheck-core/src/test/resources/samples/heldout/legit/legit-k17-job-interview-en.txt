@@ -1,0 +1,5 @@
+# kind: legit
+# type: job-interview
+# lang: en
+
+Dear Hafiz, thank you for applying for the Junior Accountant role at Sunrise Builders Sdn Bhd. We would like to invite you for an interview at our Petaling Jaya office on Tuesday, 2 Dec at 10am. Please bring your original certificates and reply to confirm your attendance.
