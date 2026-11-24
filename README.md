@@ -37,6 +37,8 @@ Requires JDK 21. The Maven wrapper downloads the right Maven version.
 
 On Windows PowerShell, use `.\mvnw.cmd` instead of `./mvnw`.
 
+`verify` runs all tests and fails if line coverage drops below 90% in either module. The coverage report is in `<module>/target/site/jacoco/index.html`. CI runs the same command on every pull request.
+
 ## Try the API
 
 With the app running:
