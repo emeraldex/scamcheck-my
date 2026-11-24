@@ -1,0 +1,5 @@
+# kind: legit
+# type: receipt
+# lang: en
+
+Thank you for your payment of RM89.00 to TNB for account ending 2210 on 24/11/2026. Ref: 7782019. Please keep this message for your records.

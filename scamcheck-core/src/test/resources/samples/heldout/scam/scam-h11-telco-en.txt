@@ -1,0 +1,5 @@
+# kind: scam
+# type: telco
+# lang: en
+
+Celcom: Your number will be deactivated today due to incomplete SIM registration under MCMC regulations. Call our officer at 03-2761 8890 to update your details.

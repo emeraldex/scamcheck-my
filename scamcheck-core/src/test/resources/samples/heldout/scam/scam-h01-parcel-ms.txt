@@ -1,0 +1,5 @@
+# kind: scam
+# type: parcel
+# lang: ms
+
+Pos Laju: Bungkusan anda tertahan di gudang kerana alamat tidak lengkap. Sila kemaskini alamat dalam masa 24 jam di https://poslaju-semak.top/my untuk mengelakkan bungkusan dipulangkan.

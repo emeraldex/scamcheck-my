@@ -1,0 +1,5 @@
+# kind: legit
+# type: government
+# lang: en
+
+KWSP: Your i-Akaun password was changed on 23/11/2026. If you did not make this change, please visit the nearest KWSP branch.

@@ -1,0 +1,5 @@
+# kind: scam
+# type: impersonation
+# lang: en
+
+Hey sorry, I accidentally sent my WhatsApp verification code to your number. Can you forward me the 6-digit code you just got? Tq!

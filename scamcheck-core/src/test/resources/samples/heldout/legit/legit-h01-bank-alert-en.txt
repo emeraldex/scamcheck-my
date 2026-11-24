@@ -1,0 +1,5 @@
+# kind: legit
+# type: bank-alert
+# lang: en
+
+Maybank: Your TAC for transfer of RM250.00 to account xxxx4521 is 482913. Valid for 3 minutes. NEVER share your TAC with anyone, including bank staff.

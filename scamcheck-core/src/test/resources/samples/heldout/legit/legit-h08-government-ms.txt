@@ -1,0 +1,5 @@
+# kind: legit
+# type: government
+# lang: ms
+
+JPJ: Lesen memandu anda akan tamat tempoh pada 03/01/2027. Sila perbaharui di kaunter JPJ berhampiran atau melalui aplikasi MyJPJ.
