@@ -1,5 +1,7 @@
 # ScamCheck MY
 
+[![CI](https://github.com/emeraldex/scamcheck-my/actions/workflows/ci.yml/badge.svg)](https://github.com/emeraldex/scamcheck-my/actions/workflows/ci.yml)
+
 Paste a suspicious message, link, phone number or bank account number and get the warning signs found, a risk level (Low / Medium / High), and links to official places to check or report: PDRM Semak Mule and the NSRC hotline 997.
 
 > **Work in progress.** Screenshots and a live demo link will be added in milestone M6.
@@ -34,6 +36,8 @@ Requires JDK 21. The Maven wrapper downloads the right Maven version.
 ```
 
 On Windows PowerShell, use `.\mvnw.cmd` instead of `./mvnw`.
+
+`verify` runs all tests and fails if line coverage drops below 90% in either module. The coverage report is in `<module>/target/site/jacoco/index.html`. CI runs the same command on every pull request.
 
 ## Try the API
 
