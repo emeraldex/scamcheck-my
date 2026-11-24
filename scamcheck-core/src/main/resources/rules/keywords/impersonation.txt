@@ -1,0 +1,24 @@
+# Claims to be police, courts, government agencies or a bank (SRS US-03, ADR-007).
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+#
+# Format: WEIGHT | language | phrase
+# Agency names alone stay MODERATE: real messages mention them too.
+
+STRONG   | ms | waran tangkap
+STRONG   | ms | waran tangkapan
+STRONG   | en | arrest warrant
+STRONG   | ms | akaun anda terlibat dalam pengubahan wang haram
+STRONG   | en | involved in money laundering
+
+MODERATE | ms | pegawai polis
+MODERATE | ms | pegawai bank
+MODERATE | ms | saman mahkamah
+MODERATE | ms | pengubahan wang haram
+MODERATE | ms | bank negara
+MODERATE | ms | lhdn
+MODERATE | ms | kastam
+MODERATE | en | police officer
+MODERATE | en | bank officer
+MODERATE | en | court summons
+MODERATE | en | money laundering
+MODERATE | en | customs department

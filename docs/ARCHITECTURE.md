@@ -68,7 +68,7 @@ scamcheck-my/
 │       └── test/resources/samples/ scam and legitimate sample sets (ADR-007)
 └── scamcheck-api/
     └── src/main/
-        ├── java/my/scamcheck/api/  ScamCheckApplication, AnalyzeController, DTOs, error handler, RuleConfig
+        ├── java/my/scamcheck/api/  ScamCheckApplication, AnalyzeController, DTOs, error handler, AnalyzerConfig
         └── resources/
             ├── messages_en.properties, messages_ms.properties   (ADR-009)
             └── static/              index.html, app.js, app.css, i18n/*.json   (ADR-006)
@@ -264,7 +264,7 @@ Weights and thresholds are starting values. They get tuned in Phase 5 against th
 | Concern | Approach | Reference |
 |---|---|---|
 | Privacy | No persistence layer at all. Input never logged. A test captures log output during analysis and fails if a canary string appears. | ADR-008, SRS US-10 |
-| Input limits | Bean Validation on the request DTO: not blank, ≤ 5,000 chars. Server request size also capped. | SRS US-01 |
+| Input limits | Explicit check in `AnalyzeRequest.validate()`: not blank, ≤ `AnalysisInput.MAX_LENGTH` (5,000) chars. Not Bean Validation, whose exceptions log the rejected value at DEBUG. | SRS US-01, ADR-010 |
 | Errors | RFC 9457 `application/problem+json` via Spring's `ProblemDetail`. Error bodies never echo the input. | API spec |
 | Localisation | Core returns message keys. API resolves them with `MessageSource` (`messages_en`, `messages_ms`). A test checks every key exists in both bundles. | ADR-009, SRS US-09 |
 | Security | No input is fetched, executed or rendered as HTML. The page inserts text with `textContent`, never `innerHTML`. Strict Content-Security-Policy header. | NFR-05 |

@@ -1,0 +1,23 @@
+# Urgency and time-pressure wording (SRS US-03, ADR-007).
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+#
+# Format: WEIGHT | language | phrase
+
+MODERATE | ms | segera
+MODERATE | ms | dengan segera
+MODERATE | ms | dalam masa 24 jam
+MODERATE | ms | peluang terakhir
+MODERATE | ms | hari ini sahaja
+MODERATE | ms | sebelum terlambat
+MODERATE | en | act now
+MODERATE | en | immediately
+MODERATE | en | within 24 hours
+MODERATE | en | last chance
+MODERATE | en | today only
+MODERATE | en | before it's too late
+
+WEAK     | ms | cepat
+WEAK     | ms | terhad
+WEAK     | en | urgent
+WEAK     | en | hurry
+WEAK     | en | limited time

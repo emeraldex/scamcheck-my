@@ -1,0 +1,29 @@
+# Threats about the user's bank or online account (SRS US-03, ADR-007).
+# Hand-curated from public scam-awareness material. Last reviewed: 2026-11-24.
+#
+# Format: WEIGHT | language | phrase
+# Phrases match exact word sequences, so common variants are listed separately.
+
+STRONG   | ms | akaun dibekukan
+STRONG   | ms | akaun anda dibekukan
+STRONG   | ms | akaun anda telah dibekukan
+STRONG   | ms | akaun disekat
+STRONG   | ms | akaun anda disekat
+STRONG   | ms | akaun anda telah disekat
+STRONG   | ms | akaun digantung
+STRONG   | ms | akaun anda digantung
+STRONG   | en | account suspended
+STRONG   | en | account has been suspended
+STRONG   | en | account will be suspended
+STRONG   | en | account frozen
+STRONG   | en | account has been frozen
+STRONG   | en | account blocked
+STRONG   | en | account has been blocked
+
+MODERATE | ms | dibekukan
+MODERATE | ms | aktiviti mencurigakan
+MODERATE | ms | transaksi mencurigakan
+MODERATE | en | unusual activity
+MODERATE | en | suspicious activity
+MODERATE | en | verify your account
+MODERATE | ms | sahkan akaun anda
